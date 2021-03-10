@@ -29,6 +29,7 @@ nlu:
      - suggest easy hikes 
 
 - intent: select_hike
+  examples: |
      - I’ll do [Mission Peak Loop](hikes)
      - I’ll do [John Muir Trail](hikes)
      - I’ll do [Wallace Creek](hikes)
