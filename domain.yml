@@ -1,0 +1,53 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - deny
+  - continue
+  - recommend_activity
+  - select_activity
+  - suggest_hike
+  - select_hike
+
+entities:
+  - activity_list
+  - hikes
+
+slots:
+  activity_list:
+  type: text
+  hikes:
+  type: text 
+
+responses:
+  utter_greet:
+  - text: "Hey! How I can help you?"
+
+  utter_recommend_activity_find:
+  - text: "Hey there, sorry to here. Let me see what I can find to make you feel better.\n
+           (thinking)"
+  
+  utter_recommend_activity_outdoor:
+  - text: "The weather outside is pleasant for an outdoor activity. Would you like me to recommend some outdoor activities?"
+
+  utter_continue_recommend_hike:
+  - text: "Great. I see you like to hike; would you like me to recommend some nearby hikes?"
+
+  utter_select_activity:
+  - text: "The activity has been saved! Let's check in later to reflect on how it went. Enjoy the rest of
+           your evening!"
+
+  utter_select_hike:
+  - text: "Great choice. The activity has been saved! Let's check in later to reflect on how it went.
+          Enjoy the rest of your evening!"
+  
+  utter_deny_activity:
+  - text: "Great. I am here if you need me. Have a good rest of your day."
+
+  utter_goodbye:
+  - text: "ok, see you later"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

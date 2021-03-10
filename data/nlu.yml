@@ -1,0 +1,61 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Nevermind. I have got to go.
+    - I have something do to.
+    - I don't want to do this anymore.
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no,thanks
+    - No,thanks. Goodbye.
+   
+- intent: continue
+  examples: | 
+  - yes
+  - yes please
+  - sure
+  - Yes 
+  - yah
+  - Yah 
+
+
+
+
+
