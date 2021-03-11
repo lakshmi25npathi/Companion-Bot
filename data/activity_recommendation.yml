@@ -10,48 +10,90 @@ nlu:
     - Can you recommend an activity?
     - Can you recommend something?
 
-- intent: select_activity
+- intent: local_hikes
   examples: |
-     - select [first](activity_list) one
-     - please select [first](activity_list) one
-     - Select [first](activity_list) one
-     - Can you select [first](activity_list) one?
-     - select [second](activity_list) one 
-     - please select [third](activity_list) one
-     - select [fourth](activity_list) one 
-     - Can you select [fifth](activity_list) one?
+     - select [Getty View Trail](local_hike) one
+     - please select [Caballero Canyon](local_hike) one
+     - Select [Freyman Canyon Park](local_hike) one
+     - Can you select [Los Liones Trail](local_hike) one?
+     - select [Mount Hollywood](local_hike) one 
+     - please select [O'Melveny Park](local_hike) one
+     - select [Runyon Canyon](local_hike) one 
+     - Can you select [Solstice Canyon](local_hike) one?
 
-- intent: suggest_hike
+- intent: recommend_easy_hike
   examples: |
      - Can you suggest easy hikes?
      - Please suggest me easy hikes
      - suggest me easy hikes
      - suggest easy hikes 
 
-- intent: local_hikes
+- intent: easy_hikes
   examples: |
-     - I’ll do [Mission Peak Loop](hikes)
-     - I’ll do [John Muir Trail](hikes)
-     - I’ll do [Wallace Creek](hikes)
-     - I’ll do [Sierra Madre loop](hikes)
+     - I’ll do [Mission Peak Loop](easy_hike)
+     - I’ll do [John Muir Trail](easy_hike)
+     - I’ll do [Wallace Creek](easy_hike)
+     - I’ll do [Sierra Madre loop](easy_hike)
+     - I’ll do [Portuguese Bend Reserve](easy_hike)
 
 - intent: outdoor_activities
   examples: |
-     - hiking
-     - biking
-     - rock climbing
-     - skiing
-     - fishing
-     - hunting
-     - sailing
-     - motorboating
+     - [Hiking](outdoor_activity)
+     - [Biking](outdoor_activity)
+     - [Rock Climbing](outdoor_activity)
+     - [Skiing](outdoor_activity)
+     - [Fishing](outdoor_activity)
+     - [Hunting](outdoor_activity)
+     - [Sailing](outdoor_activity)
+     - [Motorboating](outdoor_activity)
+
+- intent: recommend_indoor_activities
+  examples: |
+     - No. Can you recommend indoor activities?
+     - Can you recommend some indoor activities?
+     - Can you suggest some indoor activities?
+     - Please recommend indoor activities
+     - Please suggest indoor activities
+     - No. Can you suggest some indoor activities?
 
 - intent: indoor_activities
-     - Watch a Documentary on Netflix
-     - Do Yoga
-     - Do cooking
-     - Read a book
-     - Shop on online
-     - Watch a romantic movie
+  examples: |
+     - [Watch a Documentary on Netflix](indoor_activity)
+     - [Do Yoga](indoor_activity)
+     - [Do cooking](indoor_activity)
+     - [Read a book](indoor_activity)
+     - [Shop on online](indoor_activity)
+     - [Watch a romantic movie](indoor_activity)
 
+- intent: recommend_other_activities
+  examples: |
+     - No. Can you recommend something else?
+     - Can you recommend something else other than hike?
+     - Can you recommend something else?
+     - Please recommend something else
+     - Can you suggest something else?
+     - Please recommend something else other than hike
+     - Please suggest something else
 
+- intent: other_activities
+  examples: |
+     - Great, I’ll go to The [Kezar](other_activity) pub in downtown, thanks.
+     - I’ll go to the [Ye Olde King's Head](other_activity) pub in Santa Monica
+     - Great. I'll visit to the [The cat and Fiddle](other_activity) pub in Hollywood
+     - I’ll go to the [The village Idiot](other_activity) pub in Los Angeles
+
+- intent: recommend_fall_asleep
+  examples:
+     - I’m not able to sleep, can you recommend something?
+     - I'm not getting sleep, can you suggest something?
+     - I need to fall asleep, can you recommend something?
+     - Can you suggest something to fall asleep?
+
+- intent: activity_continue
+  examples: | 
+  - yes
+  - yes please
+  - sure
+  - Yes 
+  - yah
+  - Yah 

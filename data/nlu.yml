@@ -46,14 +46,6 @@ nlu:
     - no,thanks
     - No,thanks. Goodbye.
    
-- intent: continue
-  examples: | 
-  - yes
-  - yes please
-  - sure
-  - Yes 
-  - yah
-  - Yah 
 
 
 
