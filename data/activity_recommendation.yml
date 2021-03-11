@@ -28,10 +28,30 @@ nlu:
      - suggest me easy hikes
      - suggest easy hikes 
 
-- intent: select_hike
+- intent: local_hikes
   examples: |
      - I’ll do [Mission Peak Loop](hikes)
      - I’ll do [John Muir Trail](hikes)
      - I’ll do [Wallace Creek](hikes)
      - I’ll do [Sierra Madre loop](hikes)
-     
+
+- intent: outdoor_activities
+  examples: |
+     - hiking
+     - biking
+     - rock climbing
+     - skiing
+     - fishing
+     - hunting
+     - sailing
+     - motorboating
+
+- intent: indoor_activities
+     - Watch a Documentary on Netflix
+     - Do Yoga
+     - Do cooking
+     - Read a book
+     - Shop on online
+     - Watch a romantic movie
+
+
