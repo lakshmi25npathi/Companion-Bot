@@ -46,7 +46,28 @@ nlu:
     - no,thanks
     - No,thanks. Goodbye.
    
+- intent: continue
+  examples: |
+    - yes
+    - yes please
+    - sure
+    - Yes
+    - yah
+    - Yah
 
+- intent: greet
+  examples: |
+    - hi
+- intent: continue
+  examples: |
+    - yes
+- intent: greet
+  examples: |
+    - hi
+- intent: continue
+  examples: |
+    - yes
+    - sure
 
 
 

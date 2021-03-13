@@ -1,0 +1,106 @@
+version: "2.0"
+nlu:
+- intent: recommend_activity
+  examples: |
+    - I’m feeling down, can you recommend an activity?
+    - Can you suggest an activity?
+    - I’m not able to sleep, can you recommend something?
+    - Can you recommend an activity?
+    - Can you recommend something?
+    - I'm feeling down, can you recommend activity?
+    - I'm feeling down, can you recommed activity?
+    - I'm feeling down, can you recommedn activity?
+    - Can you suggest activity?
+    - I’m not able to [sleep](sleep), can you recommend something?
+    - I’m not able to [sleep](sleep), can you recommend something?
+- intent: local_hikes
+  examples: |
+    - [Getty View Trail](local_hike)
+    - [Caballero Canyon](local_hike)
+    - [Freyman Canyon Park](local_hike)
+    - [Los Liones Trail](local_hike)
+    - [Mount Hollywood](local_hike)
+    - [O'Melveny Park](local_hike)
+    - [Runyon Canyon](local_hike)
+    - [Solstice Canyon](local_hike)
+- intent: recommend_easy_hike
+  examples: |
+    - Can you suggest easy hikes?
+    - Please suggest me easy hikes
+    - suggest me easy hikes
+    - suggest easy hikes
+    - Can you suggest easy hikes
+    - can you suggest easy hikes
+- intent: easy_hikes
+  examples: |
+    - [Mission Peak Loop](easy_hike)
+    - [John Muir Trail](easy_hike)
+    - [Wallace Creek](easy_hike)
+    - [Sierra Madre loop](easy_hike)
+    - [Portuguese Bend Reserve](easy_hike)
+    - I'll do [Mission Peak Loop](easy_hike)
+    - I'll do [Wallace Creek](easy_hike)
+- intent: outdoor_activities
+  examples: |
+    - [Hiking](outdoor_activity)
+    - [Biking](outdoor_activity)
+    - [Rock Climbing](outdoor_activity)
+    - [Skiing](outdoor_activity)
+    - [Fishing](outdoor_activity)
+    - [Hunting](outdoor_activity)
+    - [Sailing](outdoor_activity)
+    - [Motorboating](outdoor_activity)
+- intent: recommend_indoor_activities
+  examples: |
+    - No. Can you recommend indoor activities?
+    - Can you recommend some indoor activities?
+    - Can you suggest some indoor activities?
+    - Please recommend indoor activities
+    - Please suggest indoor activities
+    - No. Can you suggest some indoor activities?
+    - No, can you suggest some indoor activities
+- intent: indoor_activities
+  examples: |
+    - [Watch a Documentary on Netflix](indoor_activity)
+    - [Do Yoga](indoor_activity)
+    - [Do cooking](indoor_activity)
+    - [Read a book](indoor_activity)
+    - [Shop on online](indoor_activity)
+    - [Watch a romantic movie](indoor_activity)
+    - Great, I’ll [watch a documentary on Netflix](indoor_activity).
+    - Great, I’ll [shop on online](indoor_activity).
+- intent: recommend_other_activities
+  examples: |
+    - No. Can you recommend something else?
+    - Can you recommend something else other than hike?
+    - Can you recommend something else?
+    - Please recommend something else
+    - Can you suggest something else?
+    - Please recommend something else other than hike
+    - Please suggest something else
+    - No. Can you recommend something ?
+    - No.Can you recommend something else?
+- intent: other_activities
+  examples: |
+    - Great, I’ll go to The [Kezar](other_activity) pub in downtown, thanks.
+    - I’ll go to the [Ye Olde King's Head](other_activity) pub in Santa Monica
+    - Great. I'll visit to the [The cat and Fiddle](other_activity) pub in Hollywood
+    - I’ll go to the [The village Idiot](other_activity) pub in Los Angeles
+    - Great, I’ll go to The The [Village Idiot](other_activity) pub in downtown, thanks.
+- intent: recommend_fall_asleep
+  examples: |
+    - I’m not able to [sleep](sleep), can you recommend something?
+    - I'm not getting [sleep](sleep), can you suggest something?
+    - I need to fall [asleep](sleep), can you recommend something?
+    - Can you suggest something to fall [asleep](sleep)?
+- intent: greet
+  examples: |
+    - hi
+- intent: continue
+  examples: |
+    - yes
+    - sure
+- intent: deny
+  examples: |
+    - No thanks. Goodbye.
+    - No,thanks

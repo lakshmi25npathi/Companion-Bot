@@ -1,166 +1,194 @@
-version: "2.0"
+version: '2.0'
 
 intents:
-  - greet
-  - goodbye
-  - deny
-  - activity_continue
-  - recommend_activity
-  - recommend_easy_hike
-  - easy_hikes
-  - local_hikes
-  - outdoor_activities
-  - recommend_indoor_activities
-  - indoor_activities
-  - recommend_other_activities
-  - other_activities
-  - recommend_fall_asleep
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- deny:
+    use_entities: true
+- continue:
+    use_entities: true
+- recommend_activity:
+    use_entities: true
+- recommend_easy_hike:
+    use_entities: true
+- easy_hikes:
+    use_entities: true
+- local_hikes:
+    use_entities: true
+- outdoor_activities:
+    use_entities: true
+- recommend_indoor_activities:
+    use_entities: true
+- indoor_activities:
+    use_entities: true
+- recommend_other_activities:
+    use_entities: true
+- other_activities:
+    use_entities: true
+- recommend_fall_asleep:
+    use_entities: true
 
 entities:
-  - local_hike
-  - easy_hike
-  - outdoor_activity
-  - indoor_activity
-  - other_activity
+- local_hike
+- easy_hike
+- outdoor_activity
+- indoor_activity
+- other_activity
+- sleep
 
 slots:
   outdoor_activity:
-  type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   indoor_activity:
-  type: text 
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   local_hike:
-  type: text 
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   easy_hike:
-  type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   other_activity:
-  type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 
-actions:
-  - utter_greet
-  - utter_goodbye
-  - utter_outdoor_activities
-  - utter_recommend_activity_find
-  - utter_recommend_activity_outdoor
-  - utter_recommend_easy_hike
-  - utter_recommend_indoor_activities
-  - utter_recommend_other_activities
-  - utter_indoor_activities
-  - utter_local_hikes
-  - utter_local_hikes_list
-  - utter_deny_activity
-  - utter_recommend_fall_asleep
-  - utter_activity_continue_sleep
-  - utter_activity_continue_hike
-  - utter_easy_hikes
-  - utter_outdoor_activities
-  - action_OutdoorActivities
-  - action_LocalHikes
-  - action_EasyHikes
-  - action_IndoorActivities
-  - action_OtherActivities
-  
 responses:
   utter_greet:
-  - text: "Hey! How I can help you?"
-
+  - text: Hey! How I can help you?
+  utter_default:
+  - text: Sorry, I didn't get that, can you rephrase?
   utter_recommend_activity_find:
-  - text: "Hey there, sorry to here. Let me see what I can find to make you feel better.\n
-           (thinking)"
-  - text: "Sure. Let me see what I can find.\n 
-           (thinking)"
-  
+  - text: |-
+      Hey there, sorry to here. Let me see what I can find to make you feel better.
+       (thinking)
+  - text: |-
+      Sure. Let me see what I can find.
+       (thinking)
   utter_outdoor_activities:
-  - text: "Here are some outdoor activities you can do today"
-    buttons: 
-    - title: "Hiking"
-      payload: "/outdoor_activities"
-    - title: "Biking"
-      payload: "/outdoor_activities"
-    - title: "Skiing"
-      payload: "/outdoor_activities"
-    - title: "Motorboating"
-      payload: "/outdoor_activities"
-  
+  - buttons:
+    - payload: /outdoor_activities
+      title: Hiking
+    - payload: /outdoor_activities
+      title: Biking
+    - payload: /outdoor_activities
+      title: Skiing
+    - payload: /outdoor_activities
+      title: Motorboating
+    text: Here are some outdoor activities you can do today
   utter_recommend_activity_outdoor:
-  - text: "The weather outside is pleasant for an outdoor activity. Would you like me to recommend some outdoor activities?"
-
-  utter_activity_continue_hike:
-  - text: "Great. I see you like to hike; would you like me to recommend some nearby hikes?"
-  
+  - text: The weather outside is pleasant for an outdoor activity. Would you like me to recommend some outdoor activities?
+  utter_continue_hike:
+  - text: Great. I see you like to hike; would you like me to recommend some nearby hikes?
   utter_local_hikes_list:
-  - text: "Here are some local hikes you can do today"
-    buttons: 
-    - title: "Getty View Trail"
-      payload: "/local_hikes"
-    - title: "Caballero Canyon"
-      payload: "/local_hikes"
-    - title: "Mount Hollywood"
-      payload: "/local_hikes"
-    - title: "Runyon Canyon"
-      payload: "/local_hikes"
-
+  - buttons:
+    - payload: /local_hikes
+      title: Getty View Trail
+    - payload: /local_hikes
+      title: Caballero Canyon
+    - payload: /local_hikes
+      title: Mount Hollywood
+    - payload: /local_hikes
+      title: Runyon Canyon
+    text: Here are some local hikes you can do today
   utter_local_hikes:
-  - text: "The activity has been saved! Let's check in later to reflect on how it went. Enjoy the rest of
-           your evening!"
-
+  - text: |-
+      The activity has been saved! Let's check in later to reflect on how it went. Enjoy the rest of 
+       your evening!
   utter_recommend_easy_hike:
-  - text: "Sure, let me see what I can find. Here are some easy hikes: "
-    buttons: 
-    - title: "Mission Peak Loop"
-      payload: "/easy_hikes"
-    - title: "John Muir Trail"
-      payload: "/easy_hikes"
-    - title: "Wallace Creek"
-      payload: "/easy_hikes"
-    - title: "Sierra Madre loop"
-      payload: "/easy_hikes"
-
+  - buttons:
+    - payload: /easy_hikes
+      title: Mission Peak Loop
+    - payload: /easy_hikes
+      title: John Muir Trail
+    - payload: /easy_hikes
+      title: Wallace Creek
+    - payload: /easy_hikes
+      title: Sierra Madre loop
+    text: 'Sure, let me see what I can find. Here are some easy hikes: '
   utter_easy_hikes:
-  - text: "Great choice. The activity has been saved! Let's check in later to reflect on how it went.
-          Enjoy the rest of your evening!"
-  
+  - text: |-
+      Great choice. The activity has been saved! Let's check in later to reflect on how it went.
+       Enjoy the rest of your evening!
   utter_recommend_indoor_activities:
-  - text: "Here are some indoor activities I think you might like "
-    buttons: 
-    - title: "Watch a Documentary on Netflix"
-      payload: "/indoor_activities"
-    - title: "Shop on online"
-      payload: "/indoor_activities"
-    - title: "Read a book"
-      payload: "/indoor_activities"
-    - title: "Watch a romantic movie"
-      payload: "/indoor_activities"
-
+  - buttons:
+    - payload: /indoor_activities
+      title: Watch a Documentary on Netflix
+    - payload: /indoor_activities
+      title: Shop on online
+    - payload: /indoor_activities
+      title: Read a book
+    - payload: /indoor_activities
+      title: Watch a romantic movie
+    text: 'Here are some indoor activities I think you might like '
   utter_indoor_activities:
-  - text: "Sounds wonderful. Enjoy the rest of your evening."
-  
+  - text: Sounds wonderful. Enjoy the rest of your evening.
   utter_recommend_other_activities:
-  - text: "Sure. Here are a few other things you can do."
-    buttons: 
-    - title: "Kezar"
-      payload: "/other_activities"
-    - title: "Ye Olde King's Head"
-      payload: "/other_activities"
-    - title: "The cat and Fiddle"
-      payload: "/other_activities"
-    - title: "The village Idiot"
-      payload: "/other_activities"
-
+  - buttons:
+    - payload: /other_activities
+      title: Kezar
+    - payload: /other_activities
+      title: Ye Olde King's Head
+    - payload: /other_activities
+      title: The cat and Fiddle
+    - payload: /other_activities
+      title: The village Idiot
+    text: Sure. Here are a few other things you can do.
   utter_other_activities:
-  - text: "Sounds wonderful. Enjoy the rest of your evening."
-
+  - text: Sounds wonderful. Enjoy the rest of your evening.
   utter_deny_activity:
-  - text: "Great. I am here if you need me. Have a good rest of your day."
-
+  - text: Great. I am here if you need me. Have a good rest of your day.
   utter_recommend_fall_asleep:
-  - text: "Do you want me put on some calm music on Spotify to help you fall asleep?"
-
-  utter_activity_continue_sleep:
-  - text: "Great. Here you go. Hope this helps."
-
+  - text: Do you want me put on some calm music on Spotify to help you fall asleep?
+  utter_recommend_fall_asleep_find:
+  - text: |-
+      Hey there, sorry to here. Let me see what I can find to make you feel better.
+       (thinking)
+  utter_continue_sleep:
+  - text: Great. Here you go. Hope this helps.
   utter_goodbye:
-  - text: "ok, see you later"
+  - text: ok, see you later
 
+actions:
+- utter_greet
+- utter_goodbye
+- utter_outdoor_activities
+- utter_recommend_fall_asleep_find
+- utter_recommend_activity_find
+- utter_recommend_activity_outdoor
+- utter_recommend_easy_hike
+- utter_recommend_indoor_activities
+- utter_recommend_other_activities
+- utter_indoor_activities
+- utter_local_hikes
+- utter_local_hikes_list
+- utter_deny_activity
+- utter_recommend_fall_asleep
+- utter_continue_sleep
+- utter_continue_hike
+- utter_easy_hikes
+- action_OutdoorActivities
+- action_LocalHikes
+- action_EasyHikes
+- action_IndoorActivities
+- action_OtherActivities
+forms: {}
+e2e_actions: []
+
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
