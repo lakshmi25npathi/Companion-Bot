@@ -1,5 +1,81 @@
 version: "2.0"
-
-
-
-
+nlu:
+- intent: recommend_goal
+  examples: |
+    - What goal should I pick?
+    - What is a good goal?
+    - Could you suggest something for self-improvement?
+    - What is a best goal?
+    - Could you suggest good goal?
+- intent: sounds_good
+  examples: |
+    - Those sound good
+    - Sounds good
+    - Those sounds good
+    - sound good
+    - sounds good
+- intent: fitness_goal
+  examples: |
+    - Sure. What can I do about fitness?
+    - Yes sure. What can I do about fitness?
+    - Yes. What can I do about fitness?
+    - What can I do about fitness?
+    - What I can do about fitness?
+- intent: parks_list
+  examples: |
+    - [Yosemite National Park](park)
+    - [Pinnacles National Park](park)
+    - [Redwood National Park](park)
+    - [Death Valley National Park](park)
+    - [Joshua Tree National Park](park)
+    - Yes. I pick the [Yosemite National Park](park) one.
+    - Yes. I pick the [Redwood National Park](park) one
+- intent: golf_swing
+  examples: |
+    - Nah. I want something that will improve my golf swing.
+    - No. I want something that will improve my golf swing.
+    - I want something that will improve my golf swing.
+    - I need something that would improve my golf swing.
+    - No way. I need something that would improve my golf swing.
+- intent: golf_ranges
+  examples: |-
+    - [Aroma Golf Range](golf_range)
+    - [The Ranch Golf Range](golf_range)
+    - [Inland Golf Range](golf_range)
+    - [Santa Fe Golf Range](golf_range)
+    - [Aqua Golf Driving Range](golf_range)
+- intent: deny_golf_range
+  examples: |
+    - No. They are too expensive and too far away.
+    - Nah. They are too expensive and too far away.
+    - No way. They are too expensive and too far away.
+- intent: continue_next_time
+  examples: |
+    - Maybe next time
+    - next time
+- intent: daily_goals
+  examples: |
+    - I want to work on my daily goal.
+    - I need to work on my daily goal.
+    - I would like to work on my daily goal.
+- intent: select_saved_goals
+  examples: |
+    - [Golf Swing](saved_goal)
+    - [Fitness](saved_goal)
+    - [Mindfulness](saved_goal)
+    - [Eating Habits](saved_goal)    
+- intent: pick_location_video
+  examples: |
+    - I pick the last one.
+    - Select the one one.
+    - I pick the second one
+    - I pick the third one
+    - Select the second one.
+- intent: greet
+  examples: |
+    - hi
+- intent: deny
+  examples: |
+    - No
+    - no
+    - no thanks

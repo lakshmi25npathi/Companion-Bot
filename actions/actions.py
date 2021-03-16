@@ -80,4 +80,74 @@ class ActionOtherActivities(Action):
 
 
 # Case 2 – Self-Improvement Journey (Goal setting)
-#################################################################################################################################################
+####################################################################################################
+
+# List of parks
+class ActionParksList(Action):
+
+    def name(self):
+        return "action_ParksList"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]):
+        
+         dispatcher.utter_message(template="utter_fitness_goal")
+
+         return []
+
+# List of Golf Ranges
+class ActionGolfRanges(Action):
+
+    def name(self):
+        return "action_GolfRanges"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]):
+        
+         dispatcher.utter_message(template="utter_golf_ranges_list")
+
+         return []
+
+# List of Golf Swings Videos
+class ActionGolfSwingsV(Action):
+
+    def name(self):
+        return "action_GolfSwingsV"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]):
+        
+         dispatcher.utter_message(template="utter_deny_golf_range_videos")
+
+         return []
+
+# list of daily goals
+class ActionDailyGoals(Action):
+
+    def name(self):
+        return "action_DailyGoals"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]):
+        
+         dispatcher.utter_message(template="utter_daily_goals")
+
+         return []
+
+# list of saved goals recommend videos
+class ActionSavedGoals(Action):
+
+    def name(self):
+        return "action_SavedGoals"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]):
+        
+         dispatcher.utter_message(template="utter_select_saved_goals_videos")
+
+         return []
