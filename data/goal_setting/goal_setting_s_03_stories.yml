@@ -1,0 +1,65 @@
+
+# Scenario 3 – do a saved goal
+
+version: "2.0"
+stories:
+
+- story: interactive_story_175434
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: daily_goals
+  - action: action_DailyGoals
+  - intent: select_saved_goals
+  - action: action_SavedGoals
+  - intent: pick_location_video
+  - action: utter_pick_location_video
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1654082
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: daily_goals
+  - action: action_DailyGoals
+  - intent: select_saved_goals
+  - action: action_SavedGoals
+  - intent: pick_location_video
+  - action: utter_pick_location_video
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_176543
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: daily_goals
+  - action: action_DailyGoals
+  - intent: select_saved_goals
+    entities:
+    - saved_goal: Fitness
+  - slot_was_set:
+    - saved_goal: Fitness
+  - action: action_SavedGoals
+  - intent: pick_location_video
+  - action: utter_pick_location_video
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1765439765
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: daily_goals
+  - action: action_DailyGoals
+  - intent: select_saved_goals
+    entities:
+    - saved_goal: Mindfulness
+  - slot_was_set:
+    - saved_goal: Mindfulness
+  - action: action_SavedGoals
+  - intent: pick_location_video
+  - action: utter_pick_location_video
+  - intent: deny
+  - action: utter_goodbye

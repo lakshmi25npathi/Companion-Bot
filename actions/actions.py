@@ -120,7 +120,7 @@ class ActionGolfSwingsV(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]):
         
-         dispatcher.utter_message(template="utter_deny_golf_range_videos")
+         dispatcher.utter_message(template="utter_deny_golf_range")
 
          return []
 
@@ -148,6 +148,6 @@ class ActionSavedGoals(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]):
         
-         dispatcher.utter_message(template="utter_select_saved_goals_videos")
+         dispatcher.utter_message(template="utter_select_saved_goals")
 
          return []

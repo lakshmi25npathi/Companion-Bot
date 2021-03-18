@@ -265,71 +265,29 @@ responses:
     text: I see there are golfing ranges. Want to try them out?   
 
   utter_deny_golf_range:
-  - text: I see. I found a list of instructional videos about golf swings. Want to try these?
-
-  utter_deny_golf_range_videos:
-  - text: Check this video for golf range 
-    attachment: 
-      custom:
-      type: video 
-      payload:
-        title: Your Ultimate Driving Range Session
-        src: "https://youtu.be/W-nm8xfQAiI"
-  - text: Check this video for golf range
-    attachment: 
-      custom:
-      type: video 
-      payload:
-        title: How To Play Golf - The Basics
-        src: "https://youtu.be/CN3ThL8DgFM"  
-  - text: Check this video for golf range
-    attachment: 
-      custom:
-      type: video 
-      payload:
-        title: How to practice Golf & improve
-        src: "https://youtu.be/pZRBJkvrlz4"
-    
+  - text: |-
+      I see. I found a list of instructional videos about golf swings. Want to try these?
+        (AI shows list of videos)
+ 
   utter_continue_next_time:
   - text: Okay. We can try these another time.
 
   utter_daily_goals:
   - buttons:
-    - payload: /saved_goals
+    - payload: /select_saved_goals
       title: Golf Swing
-    - payload: /saved_goals
+    - payload: /select_saved_goals
       title: Mindfulness
-    - payload: /saved_goals
+    - payload: /select_saved_goals
       title: Eating Habits
-    - payload: /saved_goals
+    - payload: /select_saved_goals
       title: Fitness
     text: Okay. Which goal did you have in mind?
           
   utter_select_saved_goals:
-  - text: Good choice. How do these look?
-            
-  utter_select_saved_goals_videos:
-  - text: Check this video for fitness 
-    attachment: 
-      custom:
-      type: video 
-      payload:
-        title: Do This Everyday To Lose Weight
-        src: "https://youtu.be/EJQLQ-m2tUc"
-  - text: Check this video for Golf Swing
-    attachment: 
-      custom:
-      type: video 
-      payload:
-        title: Golf Swing Basics - Easy Steps For Beginners
-        src: "https://youtu.be/aIB8BnsrV3M"  
-  - text: Check this video for mindfulness
-    attachment: 
-      custom:
-      type: video
-      payload:
-        title: Guided Meditation for Detachment From Over-Thinking
-        src: "https://youtu.be/1vx8iUvfyCY"
+  - text: |-
+      Good choice. How do these look?
+        (shows list of locations/videos/etc)  
 
   utter_pick_location_video:
   - text: |-
@@ -365,10 +323,8 @@ actions:
 - utter_golf_swing
 - utter_golf_ranges_list
 - utter_deny_golf_range
-- utter_deny_golf_range_videos
 - utter_daily_goals
 - utter_select_saved_goals
-- utter_select_saved_goals_videos
 - utter_pick_location_video
 - action_OutdoorActivities
 - action_LocalHikes
