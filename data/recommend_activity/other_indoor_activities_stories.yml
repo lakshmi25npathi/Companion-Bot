@@ -1,0 +1,66 @@
+version: "2.0"
+
+stories:
+- story: interactive_story_16540
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+  - action: utter_continue_hike
+  - intent: recommend_other_indoor_activities
+  - action: action_OtherIndoorActivities
+  - intent: other_indoor_activities
+  - action: utter_indoor_activities
+
+- story: interactive_story_176541
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+  - action: utter_continue_hike
+  - intent: recommend_other_indoor_activities
+  - action: action_OtherIndoorActivities
+  - intent: other_indoor_activities
+  - action: utter_indoor_activities
+
+- story: interactive_story_154321
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+  - action: utter_continue_hike
+  - intent: recommend_other_indoor_activities
+  - action: action_OtherIndoorActivities
+  - intent: other_indoor_activities
+    entities:
+    - other_other_activity: Kezar
+  - slot_was_set:
+    - other_other_activity: Kezar
+  - action: utter_indoor_activities
+
+- story: interactive_story_14326
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+  - action: utter_continue_hike
+  - intent: recommend_other_indoor_activities
+  - action: action_OtherIndoorActivities
+  - intent: other_indoor_activities
+    entities:
+    - other_indoor_activity: Village Idiot
+  - slot_was_set:
+    - other_indoor_activity: Village Idiot
+  - action: utter_indoor_activities

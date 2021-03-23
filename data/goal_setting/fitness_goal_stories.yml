@@ -1,0 +1,76 @@
+
+# Scenario 1 – suggest a goal, suggestion accepted
+version: "2.0"
+
+stories:
+- story: interactive_story_1087653
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: sounds_good
+  - action: utter_sounds_good
+  - intent: fitness_goal
+  - action: action_ParksList
+  - intent: parks_list
+  - action: utter_parks_list
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_10086542
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: sounds_good
+  - action: utter_sounds_good
+  - intent: fitness_goal
+  - action: action_ParksList
+  - intent: parks_list
+    entities:
+    - park: Yosemite National Park
+  - slot_was_set:
+    - park: Yosemite National Park
+  - action: utter_parks_list
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_10987643
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: sounds_good
+  - action: utter_sounds_good
+  - intent: fitness_goal
+  - action: action_ParksList
+  - intent: parks_list
+  - action: utter_parks_list
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_176542
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: sounds_good
+  - action: utter_sounds_good
+  - intent: fitness_goal
+  - action: action_ParksList
+  - intent: parks_list
+    entities:
+    - park: Redwood National Park
+  - slot_was_set:
+    - park: Redwood National Park
+  - action: utter_parks_list
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye

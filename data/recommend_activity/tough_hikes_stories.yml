@@ -1,0 +1,18 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_177
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+  - action: utter_continue_hike
+  - intent: continue
+  - action: action_LocalHikes
+  - intent: recommend_tough_hike
+  - action: action_ToughHikes
+  - intent: continue
+  - action: utter_tough_hikes

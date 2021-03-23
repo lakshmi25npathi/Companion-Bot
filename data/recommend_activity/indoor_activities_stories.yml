@@ -1,0 +1,62 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_1232123
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+  - action: utter_indoor_activities
+
+- story: interactive_story_10032121
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+  - action: utter_indoor_activities
+
+- story: interactive_story_15439
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: watch a documentary on Netflix
+  - slot_was_set:
+    - indoor_activity: watch a documentary on Netflix
+  - action: utter_indoor_activities
+
+- story: interactive_story_10932029
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: shop on online
+  - slot_was_set:
+    - indoor_activity: shop on online
+  - action: utter_indoor_activities

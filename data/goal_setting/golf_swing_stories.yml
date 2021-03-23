@@ -1,0 +1,59 @@
+
+# Scenario 2 – suggest a goal, suggestion declined
+
+version: "2.0"
+stories:
+- story: interactive_story_186652
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: golf_swing
+  - action: utter_golf_swing
+  - intent: continue
+  - action: action_GolfRanges
+  - intent: deny_golf_range
+  - action: utter_deny_golf_range
+  - intent: continue_next_time
+  - action: utter_continue_next_time
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_176541
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: golf_swing
+  - action: utter_golf_swing
+  - intent: continue
+  - action: action_GolfRanges
+  - intent: deny_golf_range
+  - action: utter_deny_golf_range
+  - intent: continue_next_time
+  - action: utter_continue_next_time
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1097321
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_goal
+  - action: utter_recommend_goal
+  - intent: golf_swing
+  - action: utter_golf_swing
+  - intent: continue
+  - action: action_GolfRanges
+  - intent: deny_golf_range
+  - action: utter_deny_golf_range
+  - intent: continue_next_time
+  - action: utter_continue_next_time
+  - action: utter_continue_conversation
+  - intent: deny
+  - action: utter_goodbye
+

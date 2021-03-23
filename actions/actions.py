@@ -1,9 +1,8 @@
 
-
 from typing import Any, Text, Dict, List
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import Restarted, ReminderScheduled, ReminderScheduled, SlotSet
 
 # Case 1 – Activity Recommendation
 ################################################################################################################################################
@@ -14,9 +13,7 @@ class ActionOutdoorActivities(Action):
     def name(self):
         return "action_OutdoorActivities"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_outdoor_activities")
 
@@ -28,9 +25,7 @@ class ActionLocalHikes(Action):
     def name(self):
         return "action_LocalHikes"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_local_hikes_list")
 
@@ -42,11 +37,70 @@ class ActionEasyHikes(Action):
     def name(self):
         return "action_EasyHikes"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_recommend_easy_hike")
+
+         return []
+
+# tough hikes list
+class ActionToughHikes(Action):
+
+    def name(self):
+        return "action_ToughHikes"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_tough_hike")
+
+         return []
+
+# Rock climbing places list
+class ActionRockClimbing(Action):
+
+    def name(self):
+        return "action_RockClimbing"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_rock_climbing")
+
+         return []
+
+
+# Camping places list
+class ActionCamping(Action):
+
+    def name(self):
+        return "action_Camping"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_camping")
+
+         return []
+
+# Fishing places list
+class ActionFishing(Action):
+
+    def name(self):
+        return "action_Fishing"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_fishing")
+
+         return []
+
+# Rafting places list
+class ActionRafting(Action):
+
+    def name(self):
+        return "action_Rafting"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_rafting")
 
          return []
 
@@ -56,25 +110,81 @@ class ActionIndoorActivities(Action):
     def name(self):
         return "action_IndoorActivities"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_recommend_indoor_activities")
 
          return []
 
-# Other activities other than hike list
-class ActionOtherActivities(Action):
+# Watch movie
+class ActionWatchMovie(Action):
 
     def name(self):
-        return "action_OtherActivities"
+        return "action_WatchMovie"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
-         dispatcher.utter_message(template="utter_recommend_other_activities")
+         dispatcher.utter_message(template="utter_watch_movie")
+
+         return []
+
+# Do Cooking 
+class ActionCooking(Action):
+
+    def name(self):
+        return "action_Cooking"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_cooking")
+
+         return []
+
+# Do Yoga 
+class ActionYoga(Action):
+
+    def name(self):
+        return "action_Yoga"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_yoga")
+
+         return []
+
+# Start a Garden
+class ActionStartGarden(Action):
+
+    def name(self):
+        return "action_StartGarden"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_start_garden")
+
+         return []
+
+# Read a book
+class ActionReadBook(Action):
+
+    def name(self):
+        return "action_ReadBook"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_read_book")
+
+         return []
+
+# Other Indoor activities list
+class ActionOtherIndoorActivities(Action):
+
+    def name(self):
+        return "action_OtherIndoorActivities"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_recommend_other_indoor_activities")
 
          return []
 
@@ -88,9 +198,7 @@ class ActionParksList(Action):
     def name(self):
         return "action_ParksList"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_fitness_goal")
 
@@ -102,9 +210,7 @@ class ActionGolfRanges(Action):
     def name(self):
         return "action_GolfRanges"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_golf_ranges_list")
 
@@ -116,9 +222,7 @@ class ActionGolfSwingsV(Action):
     def name(self):
         return "action_GolfSwingsV"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_deny_golf_range")
 
@@ -130,9 +234,7 @@ class ActionDailyGoals(Action):
     def name(self):
         return "action_DailyGoals"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_daily_goals")
 
@@ -144,10 +246,17 @@ class ActionSavedGoals(Action):
     def name(self):
         return "action_SavedGoals"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]):
+    def run(self, dispatcher, tracker, domain):
         
          dispatcher.utter_message(template="utter_select_saved_goals")
 
          return []
+
+
+class ActionRestarted(Action):
+
+    def name(self):
+        return "action_restart"
+
+    def run(self, dispatcher, tracker, domain):
+        return [Restarted()]
