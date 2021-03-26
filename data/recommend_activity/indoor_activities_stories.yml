@@ -1,33 +1,8 @@
 
 version: "2.0"
 stories:
-- story: interactive_story_1232123
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: recommend_activity
-  - action: utter_recommend_activity_find
-  - action: utter_recommend_activity_outdoor
-  - intent: recommend_indoor_activities
-  - action: utter_recommend_activity_find
-  - action: action_IndoorActivities
-  - intent: indoor_activities
-  - action: utter_indoor_activities
 
-- story: interactive_story_10032121
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: recommend_activity
-  - action: utter_recommend_activity_find
-  - action: utter_recommend_activity_outdoor
-  - intent: recommend_indoor_activities
-  - action: utter_recommend_activity_find
-  - action: action_IndoorActivities
-  - intent: indoor_activities
-  - action: utter_indoor_activities
-
-- story: interactive_story_15439
+- story: indoor activities - watch movie story 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -39,12 +14,13 @@ stories:
   - action: action_IndoorActivities
   - intent: indoor_activities
     entities:
-    - indoor_activity: watch a documentary on Netflix
+    - indoor_activity: Watch a movie on Netflix
   - slot_was_set:
-    - indoor_activity: watch a documentary on Netflix
+    - indoor_activity: Watch a movie on Netflix
+  - action: action_WatchMovie
   - action: utter_indoor_activities
 
-- story: interactive_story_10932029
+- story: indoor activities - watch movie story 2
   steps:
   - intent: greet
   - action: utter_greet
@@ -56,7 +32,152 @@ stories:
   - action: action_IndoorActivities
   - intent: indoor_activities
     entities:
-    - indoor_activity: shop on online
+    - indoor_activity: Watch a movie on Netflix
   - slot_was_set:
-    - indoor_activity: shop on online
+    - indoor_activity: Watch a movie on Netflix
+  - action: action_WatchMovie
+  - action: utter_indoor_activities
+ 
+- story: indoor activities - start a garden story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: Start a Garden
+  - slot_was_set:
+    - indoor_activity: Start a Garden
+  - action: action_StartGarden
+  - action: utter_indoor_activities
+
+- story: indoor activities - start a garden story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: Start a Garden
+  - slot_was_set:
+    - indoor_activity: Start a Garden
+  - action: action_StartGarden
+  - action: utter_indoor_activities
+
+- story: indoor activities - yoga story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: yoga
+  - slot_was_set:
+    - indoor_activity: yoga
+  - action: action_Yoga
+  - action: utter_indoor_activities
+
+- story: indoor activities - yoga story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: yoga
+  - slot_was_set:
+    - indoor_activity: yoga
+  - action: action_Yoga
+  - action: utter_indoor_activities
+
+- story: indoor activities - cooking story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: cooking
+  - slot_was_set:
+    - indoor_activity: cooking
+  - action: action_Cooking
+  - action: utter_indoor_activities
+
+- story: indoor activities - cooking story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: cooking
+  - slot_was_set:
+    - indoor_activity: cooking
+  - action: action_Cooking
+  - action: utter_indoor_activities
+
+- story: indoor activities - read a book story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: Read a book
+  - slot_was_set:
+    - indoor_activity: Read a book
+  - action: action_ReadBook
+  - action: utter_indoor_activities
+
+- story: indoor activities - read a book story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: recommend_indoor_activities
+  - action: utter_recommend_activity_find
+  - action: action_IndoorActivities
+  - intent: indoor_activities
+    entities:
+    - indoor_activity: Read a book
+  - slot_was_set:
+    - indoor_activity: Read a book
+  - action: action_ReadBook
   - action: utter_indoor_activities

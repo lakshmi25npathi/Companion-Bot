@@ -1,18 +1,17 @@
 version: "2.0"
-
 nlu:
 - intent: recommend_activity
   examples: |
     - I’m feeling down, can you recommend an activity?
     - Can you suggest an activity?
-    - I’m not able to sleep, can you recommend something?
     - Can you recommend an activity?
-    - Can you recommend something?
+    - Can you recommend activity?
     - I'm feeling down, can you recommend activity?
     - I'm feeling down, can you recommed activity?
     - I'm feeling down, can you recommedn activity?
     - Can you suggest activity?
-
+    - can you suggest an activity?
+    - can you recommend activity?
 - intent: local_hikes
   examples: |
     - [Getty View Trail](local_hike)
@@ -23,16 +22,23 @@ nlu:
     - [O'Melveny Park](local_hike)
     - [Runyon Canyon](local_hike)
     - [Solstice Canyon](local_hike)
-
-- intent: recommend_easy_hike
+- intent: recommend_hike_type
   examples: |
-    - Can you suggest easy hikes?
-    - Please suggest me easy hikes
-    - suggest me easy hikes
-    - suggest easy hikes
-    - Can you suggest easy hikes?
-    - can you suggest easy hikes?
-
+    - Can you suggest [easy hikes](suggest_easy_hike)?
+    - Please suggest me [easy hikes](suggest_easy_hike)
+    - suggest me [easy hikes](suggest_easy_hike)
+    - suggest [easy hikes](suggest_easy_hike)
+    - can you suggest [easy hikes](suggest_easy_hike)?
+    - Can you suggest [difficult hikes](suggest_tough_hike)?
+    - Please suggest me [toughest hikes](suggest_tough_hike)
+    - suggest me [intense hikes](suggest_tough_hike)
+    - suggest [difficult hikes](suggest_tough_hike)
+    - Can you suggest [toughest hikes](suggest_tough_hike)?
+    - can you suggest [difficult hikes](suggest_tough_hike)?
+    - Can you recommend [easy hikes](suggest_easy_hike)
+    - Can you recommend [tough hikes](suggest_tough_hike)
+    - can you recommend [easy hikes](suggest_easy_hike)?
+    - Can you suggest [tough hikes](suggest_tough_hike)?
 - intent: easy_hikes
   examples: |
     - [Mission Peak Loop](easy_hike)
@@ -42,16 +48,6 @@ nlu:
     - [Portuguese Bend Reserve](easy_hike)
     - I'll do [Mission Peak Loop](easy_hike)
     - I'll do [Wallace Creek](easy_hike)
-
-- intent: recommend_tough_hike
-  examples: |
-    - Can you suggest difficult hikes?
-    - Please suggest me toughest hikes
-    - suggest me intense hikes
-    - suggest difficult hikes
-    - Can you suggest toughest hikes?
-    - can you suggest difficult hikes?
-
 - intent: tough_hikes
   examples: |
     - [Griffith Park](tough_hike)
@@ -61,89 +57,6 @@ nlu:
     - [Stunt High Trail](tough_hike)
     - I'll do [Fish Canyon Narrows](tough_hike)
     - I'll do [Mount Lowe Railway](tough_hike)
-
-- intent: recommend_camping
-  examples: |
-    - No. Can you recommend camping activity?
-    - Can you recommend camping activity?
-    - Can you suggest camping activity?
-    - Please recommend camping activity
-    - Please suggest camping activity
-    - No. Can you suggest camping activity?
-    - No, can you suggest camping?
-    - No. Can you recommend camping?
-
-- intent: camping
-  examples: |
-    - [Yosemite National Park](camping)
-    - [Channel Islands National Park](camping)
-    - [Emerald Bay State Park](camping)
-    - [Lassen Volcanic National Park](camping)
-    - [Van Damme State Park](camping)
-    - [Bothe-Napa Valley State Park](camping)
-    - [Inntown Campground](camping)
-    - [Ventana Campground](camping)
-
-- intent: recommend_fishing
-  examples: |
-    - No. Can you recommend fishing activity?
-    - Can you recommend fishing activity?
-    - Can you suggest fishing activity?
-    - Please recommend fishing activity
-    - Please suggest fishing activity
-    - No. Can you suggest fishing activity?
-    - No, can you suggest fishing?
-    - No. Can you recommend fishing?
-
-- intent: fishing
-  examples: |
-    - [Plumas National Forest](fishing)
-    - [Los Padres National Forest](fishing)
-    - [Bighorn Mountain Wilderness](fishing)
-    - [Modoc National Forest National](fishing)
-    - [Crocker Meadows Wildlife Area](fishing)
-    - [Merced River Recreation Area](fishing)
-
-- intent: recommend_rock_climbing
-  examples: |
-    - No. Can you recommend rock climbing activity?
-    - Can you recommend rock climbing activity?
-    - Can you suggest rock climbing activity?
-    - Please recommend rock climbing activity
-    - Please suggest rock climbing activity
-    - No. Can you suggest rock climbing activity?
-    - No, can you suggest rock climbing?
-    - No. Can you recommend rock climbing?
-
-- intent: rock_climbing 
-  examples: |
-    - [Joshua Tree National Park](rock_climbing)
-    - [Mammoth Lakes](rock_climbing)
-    - [Lake Tahoe](rock_climbing)
-    - [Temple Crag](rock_climbing)
-    - [Mount Woodson](rock_climbing)
-    - [Point Dume](rock_climbing)
-
-- intent: recommend_rafting
-  examples: |
-    - No. Can you recommend rafting activity?
-    - Can you recommend rafting activity?
-    - Can you suggest rafting activity?
-    - Please recommend rafting activity
-    - Please suggest rafting activity
-    - No. Can you suggest rafting activity?
-    - No, can you suggest rafting?
-    - No. Can you recommend rafting?
-
-- intent: rafting 
-  examples: |
-    - [South Fork American River](rafting)
-    - [Middle Fork American River](rafting)
-    - [Merced River](rafting)
-    - [Tuolumne River](rafting)
-    - [Kaweah River](rafting)
-    - [California Salmon River](rafting)
-
 - intent: outdoor_activities
   examples: |
     - [Hiking](outdoor_activity)
@@ -154,7 +67,70 @@ nlu:
     - [Hunting](outdoor_activity)
     - [Sailing](outdoor_activity)
     - [Motorboating](outdoor_activity)
-
+- intent: recommend_outdoor_activities
+  examples: |
+    - No. Can you [recommend camping](suggest_camping) activity?
+    - Can you [recommend camping](suggest_camping) activity?
+    - Can you [suggest camping](suggest_camping) activity?
+    - No. Can you [suggest camping](suggest_camping) activity?
+    - No, can you [suggest camping](suggest_camping)?
+    - No. Can you [recommend camping](suggest_camping)?
+    - No. Can you [recommend fishing](suggest_fishing) activity?
+    - Can you [recommend fishing](suggest_fishing) activity?
+    - Can you [suggest fishing](suggest_fishing) activity?
+    - No. Can you [suggest fishing](suggest_fishing) activity?
+    - No, can you [suggest fishing](suggest_fishing?
+    - No. Can you [recommend fishing](suggest_fishing)?
+    - No. Can you [recommend rock climbing](suggest_rock_climbing) activity?
+    - Can you [recommend rock climbing](suggest_rock_climbing) activity?
+    - Can you [suggest rock climbing](suggest_rock_climbing) activity?
+    - No. Can you [suggest rock climbing](suggest_rock_climbing) activity?
+    - No, can you [suggest rock climbing](suggest_rock_climbing?
+    - No. Can you [recommend rock climbing](suggest_rock_climbing?
+    - No. Can you [recommend rafting](suggest_rafting) activity?
+    - Can you [recommend rafting](suggest_rafting) activity?
+    - Can you [suggest rafting](suggest_rafting) activity?
+    - No. Can you [suggest rafting](suggest_rafting) activity?
+    - No, can you [suggest rafting](suggest_rafting?
+    - No. Can you [recommend rafting](suggest_rafting?
+    - can you [suggest rafting](suggest_rafting) activity?
+    - No. can you [recommend camping](suggest_camping)
+    - Can you [suggest camping](suggest_camping) activity
+    - Can you [recommend rafting](suggest_rafting)
+- intent: camping
+  examples: |
+    - [Yosemite National Park](camping)
+    - [Channel Islands National Park](camping)
+    - [Emerald Bay State Park](camping)
+    - [Lassen Volcanic National Park](camping)
+    - [Van Damme State Park](camping)
+    - [Bothe-Napa Valley State Park](camping)
+    - [Inntown Campground](camping)
+    - [Ventana Campground](camping)
+- intent: fishing
+  examples: |
+    - [Plumas National Forest](fishing)
+    - [Los Padres National Forest](fishing)
+    - [Bighorn Mountain Wilderness](fishing)
+    - [Modoc National Forest National](fishing)
+    - [Crocker Meadows Wildlife Area](fishing)
+    - [Merced River Recreation Area](fishing)
+- intent: rock_climbing
+  examples: |
+    - [Joshua Tree National Park](rock_climbing)
+    - [Mammoth Lakes](rock_climbing)
+    - [Lake Tahoe](rock_climbing)
+    - [Temple Crag](rock_climbing)
+    - [Mount Woodson](rock_climbing)
+    - [Point Dume](rock_climbing)
+- intent: rafting
+  examples: |
+    - [South Fork American River](rafting)
+    - [Middle Fork American River](rafting)
+    - [Merced River](rafting)
+    - [Tuolumne River](rafting)
+    - [Kaweah River](rafting)
+    - [California Salmon River](rafting)
 - intent: recommend_indoor_activities
   examples: |
     - No. Can you recommend indoor activities?
@@ -164,7 +140,7 @@ nlu:
     - Please suggest indoor activities
     - No. Can you suggest some indoor activities?
     - No, can you suggest some indoor activities
-
+    - No. can you recommedn indoor activities?
 - intent: indoor_activities
   examples: |
     - [Watch a movie on Netflix](indoor_activity)
@@ -175,57 +151,15 @@ nlu:
     - [Shop on online](indoor_activity)
     - Great, I’ll [watch a movie on Netflix](indoor_activity).
     - Great, I’ll [shop on online](indoor_activity)
-
-- intent: watch_movie
-  examples: |
-    - I will watch a movie on Netflix
-    - I would like to watch movie on Netflix
-    - Can you recommed movies on Netflix?
-    - Can you suggest movie on Netflix?
-
-- intent: read_book
-  examples: |
-    - I want read a book
-    - I would like to read a book
-    - Can you recommed some books to read?
-    - Can you suggest some books to read?
-
-- intent: yoga
-  examples: |
-    - I want to do yoga
-    - I would like to do yoga in this morning
-    - I would like to do yoga in this evening
-    - Can you recommed some yoga resources to do yoga at home?
-    - Can you suggest some yoga resources to do yoga at home?
-
-- intent: cooking
-  examples: |
-    - I want to learn how to cook
-    - I would like to cook today
-    - I would like to do cook in this evening
-    - Can you recommed some cooking resources?
-    - Can you suggest some cooking resources?
-
-- intent: start_garden
-  examples: |
-    - I want to start a garden 
-    - I would like to start a garden
-    - I would like to start a garden in this morning
-    - Can you recommed some gardening resources?
-    - Can you suggest some gardening resources?
-
 - intent: recommend_other_indoor_activities
   examples: |
     - No. Can you recommend something else?
     - Can you recommend something else?
-    - Can you recommend something else?
     - Please recommend something else
     - Can you suggest something else?
-    - Please recommend something else
     - Please suggest something else
     - No. Can you recommend something ?
     - No.Can you recommend something else?
-
 - intent: other_indoor_activities
   examples: |
     - Great, I’ll go to The [Kezar](other_activity) pub in downtown, thanks.
@@ -233,14 +167,12 @@ nlu:
     - Great. I'll visit to the [The cat and Fiddle](other_activity) pub in Hollywood
     - I’ll go to the [The village Idiot](other_activity) pub in Los Angeles
     - Great, I’ll go to the [The Village Idiot](other_activity) pub in downtown, thanks.
-
 - intent: recommend_fall_asleep
   examples: |
     - I’m not able to [sleep](sleep), can you recommend something?
     - I'm not getting [sleep](sleep), can you suggest something?
     - I need to fall [asleep](sleep), can you recommend something?
     - Can you suggest something to fall [asleep](sleep)?
-
 - intent: greet
   examples: |
     - hi
@@ -248,6 +180,10 @@ nlu:
   examples: |
     - yes
     - sure
+    - [sure](continue)
+    - [yes](continue)
+    - [yes please](continue)
+    - [yes](continue)
 - intent: deny
   examples: |
     - No thanks. Goodbye.

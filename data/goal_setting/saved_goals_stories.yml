@@ -4,33 +4,7 @@
 version: "2.0"
 stories:
 
-- story: interactive_story_175434
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: daily_goals
-  - action: action_DailyGoals
-  - intent: select_saved_goals
-  - action: action_SavedGoals
-  - intent: pick_from_list
-  - action: utter_pick_from_list
-  - intent: deny
-  - action: utter_goodbye
-
-- story: interactive_story_1654082
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: daily_goals
-  - action: action_DailyGoals
-  - intent: select_saved_goals
-  - action: action_SavedGoals
-  - intent: pick_from_list
-  - action: utter_pick_from_list
-  - intent: deny
-  - action: utter_goodbye
-
-- story: interactive_story_176543
+- story: saved goals story 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -47,7 +21,7 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: interactive_story_1765439765
+- story: saved goals story 2
   steps:
   - intent: greet
   - action: utter_greet
@@ -58,6 +32,23 @@ stories:
     - saved_goal: Mindfulness
   - slot_was_set:
     - saved_goal: Mindfulness
+  - action: action_SavedGoals
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
+
+- story: saved goals story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: daily_goals
+  - action: action_DailyGoals
+  - intent: select_saved_goals
+    entities:
+    - saved_goal: Golf Swing
+  - slot_was_set:
+    - saved_goal: Golf Swing
   - action: action_SavedGoals
   - intent: pick_from_list
   - action: utter_pick_from_list

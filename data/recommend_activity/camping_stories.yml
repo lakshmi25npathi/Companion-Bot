@@ -1,0 +1,68 @@
+
+version: "2.0"
+stories:
+- story: camping story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_camping: recommend camping
+  - action: action_Camping
+  - intent: camping
+    entities:
+    - camping: Emerald Bay State Park
+  - slot_was_set:
+    - camping: Emerald Bay State Park
+  - action: utter_camping
+
+- story: camping story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_camping: recommend camping
+  - action: action_Camping
+  - intent: camping
+    entities:
+    - camping: Yosemite National Park
+  - slot_was_set:
+    - camping: Yosemite National Park
+  - action: utter_camping
+
+- story: camping story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_camping: suggest camping
+  - action: action_Camping
+  - intent: camping
+    entities:
+    - camping: Van Damme State Park
+  - slot_was_set:
+    - camping: Van Damme State Park
+  - action: utter_camping

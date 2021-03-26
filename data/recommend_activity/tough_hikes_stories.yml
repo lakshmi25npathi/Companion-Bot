@@ -1,7 +1,8 @@
 
 version: "2.0"
 stories:
-- story: interactive_story_177
+ 
+- story: tough hikes story 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -9,10 +10,72 @@ stories:
   - action: utter_recommend_activity_find
   - action: utter_recommend_activity_outdoor
   - intent: continue
+    entities:
+    - continue: sure
   - action: utter_continue_hike
   - intent: continue
+    entities:
+    - continue: yes
   - action: action_LocalHikes
-  - intent: recommend_tough_hike
+  - intent: recommend_hike_type
+    entities:
+    - suggest_tough_hike: tough hikes
   - action: action_ToughHikes
+  - intent: tough_hikes
+    entities:
+    - tough_hike: Cooper Canyon
+  - slot_was_set:
+    - tough_hike: Cooper Canyon
+  - action: utter_tough_hikes
+
+- story: tough hikes story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
   - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: continue
+    entities:
+    - continue: yes
+  - action: action_LocalHikes
+  - intent: recommend_hike_type
+    entities:
+    - suggest_tough_hike: tough hikes
+  - action: action_ToughHikes
+  - intent: tough_hikes
+    entities:
+    - tough_hike: Griffith Park
+  - slot_was_set:
+    - tough_hike: Griffith Park
+  - action: utter_tough_hikes
+
+- story: tough hikes story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: continue
+    entities:
+    - continue: yes please
+  - action: action_LocalHikes
+  - intent: recommend_hike_type
+    entities:
+    - suggest_tough_hike: tough hikes
+  - action: action_ToughHikes
+  - intent: tough_hikes
+    entities:
+    - tough_hike: Stunt High Trail
+  - slot_was_set:
+    - tough_hike: Stunt High Trail
   - action: utter_tough_hikes

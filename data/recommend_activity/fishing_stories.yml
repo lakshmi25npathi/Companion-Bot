@@ -1,0 +1,68 @@
+
+version: "2.0"
+stories:
+- story: fishing story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_fishing: recommend fishing
+  - action: action_Fishing
+  - intent: fishing
+    entities:
+    - fishing: Modoc National Forest National
+  - slot_was_set:
+    - fishing: Modoc National Forest National
+  - action: utter_fishing
+
+- story: fishing story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_fishing: recommend fishing
+  - action: action_Fishing
+  - intent: fishing
+    entities:
+    - fishing: Crocker Meadows Wildlife Area
+  - slot_was_set:
+    - fishing: Crocker Meadows Wildlife Area
+  - action: utter_fishing
+
+- story: fishing story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_fishing: recommend fishing
+  - action: action_Fishing
+  - intent: fishing
+    entities:
+    - fishing: Los Padres National Forest
+  - slot_was_set:
+    - fishing: Los Padres National Forest
+  - action: utter_fishing

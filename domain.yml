@@ -1,18 +1,19 @@
 version: '2.0'
 
 intents:
-
+- continue
 - greet
+- recommend_outdoor_activities
+- recommend_activity
+- rafting
+- recommend_indoor_activities
+- indoor_activities
 - goodbye
 - deny
-- continue
-- recommend_activity
-- recommend_easy_hike
+- recommend_hike_type
 - easy_hikes
 - local_hikes
 - outdoor_activities
-- recommend_indoor_activities
-- indoor_activities
 - recommend_other_indoor_activities
 - other_indoor_activities
 - recommend_fall_asleep
@@ -23,67 +24,64 @@ intents:
 - golf_swing
 - golf_ranges
 - deny_golf_range
-- continue_next_time
+- next_time
 - daily_goals
 - select_saved_goals
 - pick_from_list
-- recommend_camping
-- recommend_tough_hike
-- recommend_fishing
-- recommend_rafting
-- recommend_rock_climbing
 - tough_hikes
 - camping
 - rock_climbing
 - fishing
-- rafting
-- watch_movie
-- yoga
-- start_garden
-- read_book
-- cooking
-  
+- busy 
+
 entities:
-- local_hike
-- easy_hike
-- outdoor_activity
-- indoor_activity
-- other_indoor_activity
-- sleep
-- park 
-- golf_range
-- saved_goal
-- tough_hike
 - camping
+- continue
+- easy_hike
 - fishing
-- rock_climbing
+- golf_range
+- indoor_activity
+- local_hike
+- other_indoor_activity
+- outdoor_activity
+- park
 - rafting
+- rock_climbing
+- saved_goal
+- sleep
+- suggest_camping
+- suggest_easy_hike
+- suggest_fishing
+- suggest_rafting
+- suggest_rock_climbing
+- suggest_tough_hike
+- tough_hike
 
 slots:
   outdoor_activity:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   indoor_activity:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   local_hike:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   easy_hike:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   other_indoor_activity:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   park:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   golf_range:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   saved_goal:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   tough_hike:
     type: text
     influence_conversation: false
@@ -95,20 +93,21 @@ slots:
     influence_conversation: false
   rock_climbing:
     type: text
-    influence_conversation: false 
+    influence_conversation: false
   rafting:
     type: text
     influence_conversation: false
-  
+
 responses:
-
-# Recommend activity responses
-
   utter_greet:
   - text: Hey! How I can help you?
 
   utter_default:
   - text: I'm sorry, I didn't quite understand that. Could you try again?
+  - text: ok,let's try this again. How can I help you today?
+
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   - text: ok,let's try this again. How can I help you today?
 
   utter_recommend_activity_find:
@@ -121,379 +120,326 @@ responses:
 
   utter_outdoor_activities:
   - buttons:
-    - payload: /outdoor_activities{"outdoor_activity":"Hiking"}
+    - payload: /outdoor_activities{{"outdoor_activity":"Hiking"}}
       title: Hiking
-    - payload: /outdoor_activities{"outdoor_activity":"Biking"}
+    - payload: /outdoor_activities{{"outdoor_activity":"Biking"}}
       title: Biking
-    - payload: /outdoor_activities{"outdoor_activity":"Skiing"}
+    - payload: /outdoor_activities{{"outdoor_activity":"Skiing"}}
       title: Skiing
-    - payload: /outdoor_activities{"outdoor_activity":"Motorboating"}
+    - payload: /outdoor_activities{{"outdoor_activity":"Motorboating"}}
       title: Motorboating
     text: Here are some outdoor activities you can do today
 
   utter_recommend_activity_outdoor:
   - text: The weather outside is pleasant for an outdoor activity. Would you like me to recommend some outdoor activities?
-
   utter_continue_hike:
   - text: Great. I see you like to hike; would you like me to recommend some nearby hikes?
-
   utter_local_hikes_list:
   - buttons:
-    - payload: /local_hikes{"local_hike":"Getty View Trail"}
+    - payload: /local_hikes{{"local_hike":"Getty View Trail"}}
       title: Getty View Trail
-    - payload: /local_hikes{"local_hike":"Caballero Canyon"}
+    - payload: /local_hikes{{"local_hike":"Caballero Canyon"}}
       title: Caballero Canyon
-    - payload: /local_hikes{"local_hike":"Mount Hollywood"}
+    - payload: /local_hikes{{"local_hike":"Mount Hollywood"}}
       title: Mount Hollywood
-    - payload: /local_hikes{"local_hike":"Runyon Canyon"}
+    - payload: /local_hikes{{"local_hike":"Runyon Canyon"}}
       title: Runyon Canyon
     text: Here are some local hikes you can do today
-
   utter_local_hikes:
-  - text: |-
-      {local_hike} looks like a great choice for local hiking. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {local_hike} for local hiking, it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_easy_hike:
+  - text: "{local_hike} looks like a great choice for local hiking. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {local_hike} for local hiking, it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_hike_type_easy:
   - buttons:
-    - payload: /easy_hikes{"easy_hike":"Mission Peak Loop"}
+    - payload: /easy_hikes{{"easy_hike":"Mission Peak Loop"}}
       title: Mission Peak Loop
-    - payload: /easy_hikes{"easy_hike":"John Muir Trail"}
+    - payload: /easy_hikes{{"easy_hike":"John Muir Trail"}}
       title: John Muir Trail
-    - payload: /easy_hikes{"easy_hike":"Wallace Creek"}
+    - payload: /easy_hikes{{"easy_hike":"Wallace Creek"}}
       title: Wallace Creek
-    - payload: /easy_hikes{"easy_hike":"Sierra Madre loop"}
+    - payload: /easy_hikes{{"easy_hike":"Sierra Madre loop"}}
       title: Sierra Madre loop
     text: Sure, let me see what I can find. Here are some easy hikes
-
   utter_easy_hikes:
-  - text: |-
-      {easy_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {easy_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_tough_hike:
+  - text: "{easy_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {easy_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_hike_type_tough:
   - buttons:
-    - payload: /tough_hikes{"tough_hike":"Griffith Park"}
+    - payload: /tough_hikes{{"tough_hike":"Griffith Park"}}
       title: Griffith Park
-    - payload: /tough_hikes{"tough_hike":"La Jolla Valley"}
+    - payload: /tough_hikes{{"tough_hike":"La Jolla Valley"}}
       title: La Jolla Valley
-    - payload: /tough_hikes{"tough_hike":"Cooper Canyon"}
+    - payload: /tough_hikes{{"tough_hike":"Cooper Canyon"}}
       title: Cooper Canyon
-    - payload: /tough_hikes{"tough_hike":"Sandstone Peak"}
+    - payload: /tough_hikes{{"tough_hike":"Sandstone Peak"}}
       title: Sandstone Peak
-    - payload: /tough_hikes{"tough_hike":"Stunt High Trail"}
+    - payload: /tough_hikes{{"tough_hike":"Stunt High Trail"}}
       title: Stunt High Trail
     text: Sure, let me see what I can find. Here are some tough hikes
-  
   utter_tough_hikes:
-  - text: |-
-     {tough_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-     You chose: {tough_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_rocK_climbing:
+  - text: "{tough_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {tough_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_outdoor_activities_rock_climbing:
   - buttons:
-    - payload: /rock_climbing{"rock_climbing":"Joshua Tree National Park"}
+    - payload: /rock_climbing{{"rock_climbing":"Joshua Tree National Park"}}
       title: Joshua Tree National Park
-    - payload: /rock_climbing{"rock_climbing":"Mammoth Lakes"}
+    - payload: /rock_climbing{{"rock_climbing":"Mammoth Lakes"}}
       title: Mammoth Lakes
-    - payload: /rock_climbing{"rock_climbing":"Lake Tahoe"}
+    - payload: /rock_climbing{{"rock_climbing":"Lake Tahoe"}}
       title: Lake Tahoe
-    - payload: /rock_climbing{"rock_climbing":"Temple Crag"}
+    - payload: /rock_climbing{{"rock_climbing":"Temple Crag"}}
       title: Temple Crag
-    - payload: /rock_climbing{"rock_climbing":"Mount Woodson"}
+    - payload: /rock_climbing{{"rock_climbing":"Mount Woodson"}}
       title: Mount Woodson
-    - payload: /rock_climbing{"rock_climbing":"Point Dume"}
+    - payload: /rock_climbing{{"rock_climbing":"Point Dume"}}
       title: Point Dume
     text: Sure, let me see what I can find. Here are some camping places
-
   utter_rock_climbing:
-  - text: |-
-      {rock_climbing} looks like a great choice for rock climbing. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {rock_climbing} for rock climbing , it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_camping:
+  - text: "{rock_climbing} looks like a great choice for rock climbing. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {rock_climbing} for rock climbing , it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_outdoor_activities_camping:
   - buttons:
-    - payload: /camping{"camping":"Yosemite National Park"}
+    - payload: /camping{{"camping":"Yosemite National Park"}}
       title: Yosemite National Park
-    - payload: /camping{"camping":"Channel Islands National Park"}
+    - payload: /camping{{"camping":"Channel Islands National Park"}}
       title: Channel Islands National Park
-    - payload: /camping{"camping":"Emerald Bay State Park"}
+    - payload: /camping{{"camping":"Emerald Bay State Park"}}
       title: Emerald Bay State Park
-    - payload: /camping{"camping":"Lassen Volcanic National Park"}
+    - payload: /camping{{"camping":"Lassen Volcanic National Park"}}
       title: Lassen Volcanic National Park
-    - payload: /camping{"camping":"Van Damme State Park"}
+    - payload: /camping{{"camping":"Van Damme State Park"}}
       title: Van Damme State Park
-    - payload: /camping{"camping":"Ventana Campground"}
+    - payload: /camping{{"camping":"Ventana Campground"}}
       title: Ventana Campground
     text: Sure, let me see what I can find. Here are some camping places
-
   utter_camping:
-  - text: |-
-      {camping} looks like a great choice for camping. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {camping} for camping , it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_fishing:
+  - text: "{camping} looks like a great choice for camping. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {camping} for camping , it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_outdoor_activities_fishing:
   - buttons:
-    - payload: /fishing{"fishing":"Plumas National Forest"}
+    - payload: /fishing{{"fishing":"Plumas National Forest"}}
       title: Plumas National Forest
-    - payload: /fishing{"fishing":"Los Padres National Forest"}
+    - payload: /fishing{{"fishing":"Los Padres National Forest"}}
       title: Los Padres National Forest
-    - payload: /fishing{"fishing":"Bighorn Mountain Wilderness"}
+    - payload: /fishing{{"fishing":"Bighorn Mountain Wilderness"}}
       title: Bighorn Mountain Wilderness
-    - payload: /fishing{"fishing":"Modoc National Forest National"}
+    - payload: /fishing{{"fishing":"Modoc National Forest National"}}
       title: Modoc National Forest National
-    - payload: /fishing{"fishing":"Crocker Meadows Wildlife Area"}
+    - payload: /fishing{{"fishing":"Crocker Meadows Wildlife Area"}}
       title: Crocker Meadows Wildlife Area
-    - payload: /fishing{"fishing":"Merced River Recreation Area"}
+    - payload: /fishing{{"fishing":"Merced River Recreation Area"}}
       title: Merced River Recreation Area
     text: Sure, let me see what I can find. Here are some fishing places,
-
   utter_fishing:
-  - text: |-
-      {fishing} looks like a great choice for fishing. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {fishing} for fishing , it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_recommend_rafting:
+  - text: "{fishing} looks like a great choice for fishing. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {fishing} for fishing , it's been saved. Let’s checking later to reflect on how it went."
+  utter_recommend_outdoor_activities_rafting:
   - buttons:
-    - payload: /rafting{"rafting":"South Fork American River"}
+    - payload: /rafting{{"rafting":"South Fork American River"}}
       title: South Fork American River
-    - payload: /rafting{"rafting":"Middle Fork American River"}
+    - payload: /rafting{{"rafting":"Middle Fork American River"}}
       title: Middle Fork American River
-    - payload: /rafting{"rafting":"Merced River"}
+    - payload: /rafting{{"rafting":"Merced River"}}
       title: Merced River
-    - payload: /rafting{"rafting":"Tuolumne River"}
+    - payload: /rafting{{"rafting":"Tuolumne River"}}
       title: Tuolumne River
-    - payload: /rafting{"rafting":"Kaweah River"}
+    - payload: /rafting{{"rafting":"Kaweah River"}}
       title: Kaweah River
-    - payload: /rafting{"rafting":"California Salmon River"}
+    - payload: /rafting{{"rafting":"California Salmon River"}}
       title: California Salmon River
     text: Sure, let me see what I can find. Here are some rafting places,
-
   utter_rafting:
-  - text: |-
-      {rafting} looks like a great choice for rafting. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {rafting} for rafting , it's been saved. Let’s checking later to reflect on how it went.
-
+  - text: "{rafting} looks like a great choice for rafting. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {rafting} for rafting , it's been saved. Let’s checking later to reflect on how it went."
   utter_recommend_indoor_activities:
   - buttons:
-    - payload: /indoor_activities{"indoor_activity":"Watch a Documentary on Netflix"}
-      title: Watch a Documentary on Netflix
-    - payload: /indoor_activities{"indoor_activity":"Start a Garden"}
+    - payload: /indoor_activities{{"indoor_activity":"Watch a movie on Netflix"}}
+      title: Watch a movie on Netflix
+    - payload: /indoor_activities{{"indoor_activity":"Start a Garden"}}
       title: Start a Garden
-    - payload: /indoor_activities{"indoor_activity":"Read a book"}
+    - payload: /indoor_activities{{"indoor_activity":"Read a book"}}
       title: Read a book
-    - payload: /indoor_activities{"indoor_activity":"Yoga"}
+    - payload: /indoor_activities{{"indoor_activity":"Yoga"}}
       title: Yoga
-    text: Here are some indoor activities I think you might like 
-
-  utter_watch_movie:
+    text: Here are some indoor activities I think you might like
+  utter_indoor_activities_watch_movie:
   - text: |-
       I see. I found a list of movies. Want to try these?
         (AI shows list of movies)
-
-  utter_read_book:
+  utter_indoor_activities_read_book:
   - text: |-
       I see. I found a list of books. Want to try these?
         (AI shows list of books)
- 
-  utter_yoga:
+  utter_indoor_activities_yoga:
   - text: |-
       I see. I found a list of yoga resources. Want to try these?
         (AI shows list of yoga resources)
-  
-  utter_start_garden:
+  utter_indoor_activities_start_garden:
   - text: |-
       I see. I found a list of gardening resources. Want to try these?
         (AI shows list of gardening resources)
-
-  utter_cooking:
+  utter_indoor_activities_cooking:
   - text: |-
       I see. I found a list of cooking resources. Want to try these?
         (AI shows list of cooking resources)
-
   utter_recommend_other_indoor_activities:
   - buttons:
-    - payload: /other_indoor_activities{"other_indoor_activity":"Kezar"}
+    - payload: /other_indoor_activities{{"other_indoor_activity":"Kezar"}}
       title: Kezar
-    - payload: /other_indoor_activities{"other_indoor_activity":"Ye Olde King's Head"}
+    - payload: /other_indoor_activities{{"other_indoor_activity":"Ye Olde King's Head"}}
       title: Ye Olde King's Head
-    - payload: /other_indoor_activities{"other_indoor_activity":"The cat and Fiddle"}
+    - payload: /other_indoor_activities{{"other_indoor_activity":"The cat and Fiddle"}}
       title: The cat and Fiddle
-    - payload: /other_indoor_activities{"other_indoor_activity":"The village Idiot"}
+    - payload: /other_indoor_activities{{"other_indoor_activity":"The village Idiot"}}
       title: The village Idiot
     text: Sure. Here are a few other things you can do.
-
   utter_indoor_activities:
   - text: Sounds wonderful. Enjoy the rest of your day.
-
   utter_deny_activity:
   - text: Great. I am here if you need me. Have a good rest of your day.
-
   utter_recommend_fall_asleep_find:
   - text: |-
       Hey there, sorry to here. Let me see what I can find to make you feel better.
        (thinking)
-
   utter_recommend_fall_asleep:
   - text: Do you want me put on some calm music on Spotify to help you fall asleep?
-
   utter_continue_sleep:
   - text: Great. Here you go. Hope this helps.
-
-# Goal setting Responses
-
   utter_recommend_goal:
   - text: |-
       Many have benefitted from consistent effort on their eating habits, fitness, and mindfulness. 
         We could start with these unless if you have a better idea.
-
   utter_sounds_good:
   - text: |-
       Great! I’ve added nutrition, fitness, and mindfulness to your goals. 
         Would you like to start working on your goals now?
-
   utter_fitness_goal:
   - buttons:
-    - payload: /parks_list{"park":"Yosemite National Park"}
+    - payload: /parks_list{{"park":"Yosemite National Park"}}
       title: Yosemite National Park
-    - payload: /parks_list{"park":"Pinnacles National Park"}
+    - payload: /parks_list{{"park":"Pinnacles National Park"}}
       title: Pinnacles National Park
-    - payload: /parks_list{"park":"Redwood National Park"}
+    - payload: /parks_list{{"park":"Redwood National Park"}}
       title: Redwood National Park
-    - payload: /parks_list{"park":"Death Valley National Park"}
+    - payload: /parks_list{{"park":"Death Valley National Park"}}
       title: Death Valley National Park
-    text: I see the weather is clear today. Would you like to run to a nearby park? 
-
+    text: I see the weather is clear today. Would you like to run to a nearby park?
   utter_parks_list:
-  - text: |-
-      {park} looks like a great choice for running. It has been saved! Let's check in later to reflect on how it went.
-  - text: |- 
-      You chose: {park} for running, it's been saved. Let’s checking later to reflect on how it went.
-
-  utter_continue_conversation:
+  - text: "{park} looks like a great choice for running. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {park} for running, it's been saved. Let’s checking later to reflect on how it went."
+  utter_parks_list_continue:
   - text: Anything else I can help you with?
-
   utter_golf_swing:
   - text: Okay. Golf swing has been added to your goals. Would you like to start working on your goals now?
-
   utter_golf_ranges_list:
   - buttons:
-    - payload: /golf_ranges{"golf_range":"Aroma Golf Range"}
+    - payload: /golf_ranges{{"golf_range":"Aroma Golf Range"}}
       title: Aroma Golf Range
-    - payload: /golf_ranges{"golf_range":"The Ranch Golf Range"}
+    - payload: /golf_ranges{{"golf_range":"The Ranch Golf Range"}}
       title: The Ranch Golf Range
-    - payload: /golf_ranges{"golf_range":"Inland Golf Range"}
+    - payload: /golf_ranges{{"golf_range":"Inland Golf Range"}}
       title: Inland Golf Range
-    - payload: /golf_ranges{"golf_range":"Santa Fe Golf Range"}
+    - payload: /golf_ranges{{"golf_range":"Santa Fe Golf Range"}}
       title: Santa Fe Golf Range
-    text: I see there are golfing ranges. Want to try them out?   
-
+    text: I see there are golfing ranges. Want to try them out?
   utter_deny_golf_range:
   - text: |-
       I see. I found a list of instructional videos about golf swings. Want to try these?
         (AI shows list of videos)
- 
-  utter_continue_next_time:
+  utter_next_time:
   - text: Okay. We can try these another time.
-
+  utter_next_time_continue:
+  - text: Anything else I can help you with?
   utter_daily_goals:
   - buttons:
-    - payload: /select_saved_goals{"saved_goal":"Golf Swing"}
+    - payload: /select_saved_goals{{"saved_goal":"Golf Swing"}}
       title: Golf Swing
-    - payload: /select_saved_goals{"saved_goal":"Mindfulness"}
+    - payload: /select_saved_goals{{"saved_goal":"Mindfulness"}}
       title: Mindfulness
-    - payload: /select_saved_goals{"saved_goal":"Eating Habits"}
+    - payload: /select_saved_goals{{"saved_goal":"Eating Habits"}}
       title: Eating Habits
-    - payload: /select_saved_goals{"saved_goal":"Fitness"}
+    - payload: /select_saved_goals{{"saved_goal":"Fitness"}}
       title: Fitness
     text: Okay. Which goal did you have in mind?
-          
   utter_select_saved_goals:
   - text: |-
       Good choice. How do these look?
-        (shows list of locations/videos/etc)  
-
+        (shows list of locations/videos/etc) 
   utter_pick_from_list:
   - text: |-
       Okay. Your activity has been saved. Let’s check back later. 
         Anything else I can do for you?
-
+  utter_busy:
+  - text: Ok. We can save that for another time.
   utter_goodbye:
   - text: ok, see you later
 
 actions:
-- utter_greet
-- utter_goodbye
-- utter_outdoor_activities
-- utter_recommend_fall_asleep_find
-- utter_recommend_activity_find
-- utter_recommend_activity_outdoor
-- utter_recommend_easy_hike
-- utter_recommend_tough_hike
-- utter_recommend_rocK_climbing
-- utter_recommend_camping
-- utter_recommend_fishing
-- utter_recommend_rafting
-- utter_recommend_indoor_activities
-- utter_recommend_other_indoor_activities
-- utter_cooking
-- utter_read_book
-- utter_start_garden
-- utter_yoga
-- utter_watch_movie
-- utter_indoor_activities
+- action_Camping
+- action_Cooking
+- action_DailyGoals
+- action_EasyHikes
+- action_Fishing
+- action_GolfRanges
+- action_GolfSwingsV
+- action_IndoorActivities
+- action_LocalHikes
+- action_OtherIndoorActivities
+- action_OutdoorActivities
+- action_ParksList
+- action_Rafting
+- action_ReadBook
+- action_RockClimbing
+- action_SavedGoals
+- action_StartGarden
+- action_ToughHikes
+- action_WatchMovie
+- action_Yoga
+- utter_camping
 - utter_continue_hike
+- utter_continue_sleep
+- utter_daily_goals
+- utter_deny_activity
+- utter_deny_golf_range
 - utter_easy_hikes
+- utter_fitness_goal
+- utter_golf_ranges_list
+- utter_golf_swing
+- utter_goodbye
+- utter_greet
+- utter_indoor_activities
+- utter_indoor_activities_cooking
+- utter_indoor_activities_read_book
+- utter_indoor_activities_start_garden
+- utter_indoor_activities_watch_movie
+- utter_indoor_activities_yoga
 - utter_local_hikes
 - utter_local_hikes_list
-- utter_tough_hikes
-- utter_rock_climbing
-- utter_rafting
-- utter_camping
-- utter_deny_activity
-- utter_recommend_fall_asleep
-- utter_continue_sleep
-- utter_fitness_goal
-- utter_sounds_good
-- utter_recommend_goal
+- utter_next_time
+- utter_next_time_continue
+- utter_outdoor_activities
 - utter_parks_list
-- utter_continue_conversation
-- utter_golf_swing
-- utter_golf_ranges_list
-- utter_deny_golf_range
-- utter_daily_goals
-- utter_select_saved_goals
+- utter_parks_list_continue
 - utter_pick_from_list
-- action_OutdoorActivities
-- action_LocalHikes
-- action_EasyHikes
-- action_ToughHikes
-- action_RockClimbing
-- action_Camping
-- action_Fishing
-- action_Rafting
-- action_IndoorActivities
-- action_StartGarden
-- action_ReadBook
-- action_Yoga
-- action_WatchMovie
-- action_Cooking
-- action_OtherIndoorActivities
-- action_ParksList
-- action_GolfSwingsV
-- action_SavedGoals
-- action_DailyGoals
-- action_GolfRanges
+- utter_rafting
+- utter_recommend_activity_find
+- utter_recommend_activity_outdoor
+- utter_recommend_fall_asleep
+- utter_recommend_fall_asleep_find
+- utter_recommend_goal
+- utter_recommend_hike_type_easy
+- utter_recommend_hike_type_tough
+- utter_recommend_indoor_activities
+- utter_recommend_other_indoor_activities
+- utter_recommend_outdoor_activities_camping
+- utter_recommend_outdoor_activities_fishing
+- utter_recommend_outdoor_activities_rafting
+- utter_recommend_outdoor_activities_rock_climbing
+- utter_rock_climbing
+- utter_select_saved_goals
+- utter_sounds_good
+- utter_tough_hikes
+- utter_busy
 
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

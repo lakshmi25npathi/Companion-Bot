@@ -1,0 +1,68 @@
+
+version: "2.0"
+stories:
+- story: rafting story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: yes please
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rafting: recommend rafting
+  - action: action_Rafting
+  - intent: rafting
+    entities:
+    - rafting: Tuolumne River
+  - slot_was_set:
+    - rafting: Tuolumne River
+  - action: utter_rafting
+
+- story: rafting story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: yes please
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rafting: recommend rafting
+  - action: action_Rafting
+  - intent: rafting
+    entities:
+    - rafting: Merced River
+  - slot_was_set:
+    - rafting: Merced River
+  - action: utter_rafting
+
+- story: rafting story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: yes please
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rafting: recommend rafting
+  - action: action_Rafting
+  - intent: rafting
+    entities:
+    - rafting: California Salmon River
+  - slot_was_set:
+    - rafting: California Salmon River
+  - action: utter_rafting

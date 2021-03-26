@@ -1,0 +1,68 @@
+
+version: "2.0"
+stories:
+- story: rock climbing story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rock_climbing: suggest rock climbing
+  - action: action_RockClimbing
+  - intent: rock_climbing
+    entities:
+    - rock_climbing: Joshua Tree National Park
+  - slot_was_set:
+    - rock_climbing: Joshua Tree National Park
+  - action: utter_rock_climbing
+
+- story: rock climbing story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rock_climbing: suggest rock climbing
+  - action: action_RockClimbing
+  - intent: rock_climbing
+    entities:
+    - rock_climbing: Temple Crag
+  - slot_was_set:
+    - rock_climbing: Temple Crag
+  - action: utter_rock_climbing
+
+- story: rock climbing story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend_activity
+  - action: utter_recommend_activity_find
+  - action: utter_recommend_activity_outdoor
+  - intent: continue
+    entities:
+    - continue: sure
+  - action: utter_continue_hike
+  - intent: recommend_outdoor_activities
+    entities:
+    - suggest_rock_climbing: suggest rock climbing
+  - action: action_RockClimbing
+  - intent: rock_climbing
+    entities:
+    - rock_climbing: Lake Tahoe 
+  - slot_was_set:
+    - rock_climbing: Lake Tahoe 
+  - action: utter_rock_climbing

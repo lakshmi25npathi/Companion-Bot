@@ -56,7 +56,7 @@ nlu:
     - Nah. They are too expensive and too far away.
     - No way. They are too expensive and too far away.
 
-- intent: continue_next_time
+- intent: next_time
   examples: |
     - Maybe next time
     - next time
@@ -79,12 +79,20 @@ nlu:
 
 - intent: pick_from_list
   examples: |
-    - I pick the last one.
-    - Select the one one.
+    - I pick the last one
+    - Select the one one
     - I pick the second one
     - I pick the third one
-    - Select the second one.
+    - Select the second one
     - select the second one
+
+- intent: busy
+  examples: |
+    - I do not feel like it.
+    - I am unwell
+    - I can’t today
+    - Not today
+    - I’m too busy for that
     
 - intent: greet
   examples: |

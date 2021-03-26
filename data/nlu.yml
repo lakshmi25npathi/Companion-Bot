@@ -48,12 +48,12 @@ nlu:
    
 - intent: continue
   examples: |
-    - yes
-    - yes please
-    - sure
-    - Yes
-    - yah
-    - Yah
+    - [yes please](continue)
+    - [sure](continue)
+    - [sure](continue)
+    - [Yes please](continue)
+    - [yah please](continue)
+    - [Yah please](continue)
 
 - intent: greet
   examples: |

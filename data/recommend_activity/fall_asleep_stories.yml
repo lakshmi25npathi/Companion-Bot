@@ -1,6 +1,6 @@
 version: "2.0"
 stories:
-- story: interactive_story_197532
+- story: fall asleep story 1
   steps:
   - intent: greet
   - action: utter_greet
@@ -10,9 +10,11 @@ stories:
   - action: utter_recommend_fall_asleep_find
   - action: utter_recommend_fall_asleep
   - intent: continue
+    entities:
+    - continue: yes please
   - action: utter_continue_sleep
 
-- story: interactive_story_1002349
+- story: fall asleep story 2
   steps:
   - intent: greet
   - action: utter_greet
@@ -22,9 +24,11 @@ stories:
   - action: utter_recommend_fall_asleep_find
   - action: utter_recommend_fall_asleep
   - intent: continue
+    entities:
+    - continue: yes please
   - action: utter_continue_sleep
 
-- story: interactive_story_100432
+- story: fall asleep story 3
   steps:
   - intent: greet
   - action: utter_greet
@@ -34,4 +38,6 @@ stories:
   - action: utter_recommend_fall_asleep_find
   - action: utter_recommend_fall_asleep
   - intent: continue
+    entities:
+    - continue: yes please
   - action: utter_continue_sleep
