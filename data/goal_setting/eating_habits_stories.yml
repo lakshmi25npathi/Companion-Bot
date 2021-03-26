@@ -1,0 +1,47 @@
+
+version: "2.0"
+stories:
+- story: eating habits story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: eating habits
+  - slot_was_set:
+    - goal: eating habits
+  - action: action_EatingHabits
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
+
+- story: eating habits story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: eating habits
+  - slot_was_set:
+    - goal: eating habits
+  - action: action_EatingHabits
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
+
+- story: eating habits story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: eating habits
+  - slot_was_set:
+    - goal: eating habits
+  - action: action_EatingHabits
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye

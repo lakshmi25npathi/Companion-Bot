@@ -1,13 +1,26 @@
 version: "2.0"
 nlu:
-- intent: recommend_goal
+- intent: goal_setting_improve_goal
   examples: |
     - What goal should I pick?
     - What is a good goal?
     - Could you suggest something for self-improvement?
     - What is a best goal?
     - Could you suggest good goal?
-
+    - I want to set a goal
+    - My goal today is [fitness](goal)
+    - [Mindfulness](goal) will be today's goal
+    - I want my goal to be [Eating Habits](goal)
+    - I need to get better at [fitness](goal)
+    - How do I improve on [mindfulness](goal)?
+    - I would like to improve on [fitness](goal)
+    - I would like [eating habits](goal) to be my goal
+    - [Fitness](goal) is my improvement area
+    - How do I get better at [mindfulness](goal)
+    - My goal today is [golf swing](goal)
+    - How do I improve on [golf swing](goal)?
+    - My goal today is [Mindfulness](goal)
+    - My goal today is [eating habits](goal)
 - intent: sounds_good
   examples: |
     - Those sound good
@@ -15,7 +28,6 @@ nlu:
     - Those sounds good
     - sound good
     - sounds good
-
 - intent: fitness_goal
   examples: |
     - Sure. What can I do about fitness?
@@ -23,7 +35,6 @@ nlu:
     - Yes. What can I do about fitness?
     - What can I do about fitness?
     - What I can do about fitness?
-
 - intent: parks_list
   examples: |
     - [Yosemite National Park](park)
@@ -33,7 +44,6 @@ nlu:
     - [Joshua Tree National Park](park)
     - Yes. I pick the [Yosemite National Park](park) one.
     - Yes. I pick the [Redwood National Park](park) one
-
 - intent: golf_swing
   examples: |
     - Nah. I want something that will improve my golf swing.
@@ -41,7 +51,6 @@ nlu:
     - I want something that will improve my golf swing.
     - I need something that would improve my golf swing.
     - No way. I need something that would improve my golf swing.
-
 - intent: golf_ranges
   examples: |
     - [Aroma Golf Range](golf_range)
@@ -49,34 +58,28 @@ nlu:
     - [Inland Golf Range](golf_range)
     - [Santa Fe Golf Range](golf_range)
     - [Aqua Golf Driving Range](golf_range)
-
 - intent: deny_golf_range
   examples: |
     - No. They are too expensive and too far away.
     - Nah. They are too expensive and too far away.
     - No way. They are too expensive and too far away.
-
 - intent: next_time
   examples: |
     - Maybe next time
     - next time
     - Maybe next time.
     - May be next time
-
 - intent: daily_goals
   examples: |
     - I want to work on my daily goal.
     - I need to work on my daily goal.
     - I would like to work on my daily goal.
-
 - intent: select_saved_goals
   examples: |
     - [Golf Swing](saved_goal)
     - [Fitness](saved_goal)
     - [Mindfulness](saved_goal)
     - [Eating Habits](saved_goal)
-    - [Fitness](saved_goal)
-
 - intent: pick_from_list
   examples: |
     - I pick the last one
@@ -85,7 +88,8 @@ nlu:
     - I pick the third one
     - Select the second one
     - select the second one
-
+    - Pick first one
+    - pick second one
 - intent: busy
   examples: |
     - I do not feel like it.
@@ -93,7 +97,6 @@ nlu:
     - I can’t today
     - Not today
     - I’m too busy for that
-    
 - intent: greet
   examples: |
     - hi

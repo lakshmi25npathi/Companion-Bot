@@ -8,8 +8,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: sounds_good
   - action: utter_sounds_good
   - intent: fitness_goal
@@ -20,7 +20,7 @@ stories:
   - slot_was_set:
     - park: Yosemite National Park
   - action: utter_parks_list
-  - action: utter_parks_list_continue
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye
 
@@ -28,8 +28,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: sounds_good
   - action: utter_sounds_good
   - intent: fitness_goal
@@ -40,7 +40,7 @@ stories:
   - slot_was_set:
     - park: Redwood National Park
   - action: utter_parks_list
-  - action: utter_parks_list_continue
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye
 
@@ -48,8 +48,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: sounds_good
   - action: utter_sounds_good
   - intent: fitness_goal
@@ -60,6 +60,66 @@ stories:
   - slot_was_set:
     - park: Pinnacles National Park
   - action: utter_parks_list
-  - action: utter_parks_list_continue
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye
+
+- story: fitness goal story 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: fitness
+  - slot_was_set:
+    - goal: fitness
+  - action: action_ParksList
+  - intent: parks_list
+    entities:
+    - park: Redwood National Park
+  - slot_was_set:
+    - park: Redwood National Park
+  - action: utter_parks_list
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye
+
+- story: fitness goal story 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: fitness
+  - slot_was_set:
+    - goal: fitness
+  - action: action_ParksList
+  - intent: parks_list
+    entities:
+    - park: Yosemite National Park
+  - slot_was_set:
+    - park: Yosemite National Park
+  - action: utter_parks_list
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye
+
+- story: fitness goal story 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: fitness
+  - slot_was_set:
+    - goal: fitness
+  - action: action_ParksList
+  - intent: parks_list
+    entities:
+    - park: Death Valley National Park
+  - slot_was_set:
+    - park: Death Valley National Park
+  - action: utter_parks_list
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye

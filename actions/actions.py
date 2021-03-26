@@ -253,6 +253,31 @@ class ActionSavedGoals(Action):
 
          return []
 
+# list of videos for eating habits
+class ActionEatingHabits(Action):
+
+    def name(self):
+        return "action_EatingHabits"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_goal_setting_improve_goal_eating_habits")
+
+         return []
+
+# list of videos for Mindfulness
+class ActionMindfulness(Action):
+
+    def name(self):
+        return "action_Mindfulness"
+
+    def run(self, dispatcher, tracker, domain):
+        
+         dispatcher.utter_message(template="utter_goal_setting_improve_goal_mindfulness")
+
+         return []
+
+
 class ActionRestarted(Action):
 
     def name(self):

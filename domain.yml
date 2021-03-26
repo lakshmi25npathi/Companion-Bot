@@ -17,7 +17,7 @@ intents:
 - recommend_other_indoor_activities
 - other_indoor_activities
 - recommend_fall_asleep
-- recommend_goal
+- goal_setting_improve_goal
 - sounds_good
 - fitness_goal
 - parks_list
@@ -56,6 +56,7 @@ entities:
 - suggest_rock_climbing
 - suggest_tough_hike
 - tough_hike
+- goal
 
 slots:
   outdoor_activity:
@@ -97,8 +98,12 @@ slots:
   rafting:
     type: text
     influence_conversation: false
+  goal:
+    type: text
+    influence_conversation: false
 
 responses:
+  ## Recommend activity
   utter_greet:
   - text: Hey! How I can help you?
 
@@ -132,8 +137,10 @@ responses:
 
   utter_recommend_activity_outdoor:
   - text: The weather outside is pleasant for an outdoor activity. Would you like me to recommend some outdoor activities?
+
   utter_continue_hike:
   - text: Great. I see you like to hike; would you like me to recommend some nearby hikes?
+
   utter_local_hikes_list:
   - buttons:
     - payload: /local_hikes{{"local_hike":"Getty View Trail"}}
@@ -145,9 +152,11 @@ responses:
     - payload: /local_hikes{{"local_hike":"Runyon Canyon"}}
       title: Runyon Canyon
     text: Here are some local hikes you can do today
+
   utter_local_hikes:
   - text: "{local_hike} looks like a great choice for local hiking. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {local_hike} for local hiking, it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_hike_type_easy:
   - buttons:
     - payload: /easy_hikes{{"easy_hike":"Mission Peak Loop"}}
@@ -159,9 +168,11 @@ responses:
     - payload: /easy_hikes{{"easy_hike":"Sierra Madre loop"}}
       title: Sierra Madre loop
     text: Sure, let me see what I can find. Here are some easy hikes
+
   utter_easy_hikes:
   - text: "{easy_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {easy_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_hike_type_tough:
   - buttons:
     - payload: /tough_hikes{{"tough_hike":"Griffith Park"}}
@@ -175,9 +186,11 @@ responses:
     - payload: /tough_hikes{{"tough_hike":"Stunt High Trail"}}
       title: Stunt High Trail
     text: Sure, let me see what I can find. Here are some tough hikes
+
   utter_tough_hikes:
   - text: "{tough_hike} looks like a great choice for easy hiking. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {tough_hike} for easy hiking, it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_outdoor_activities_rock_climbing:
   - buttons:
     - payload: /rock_climbing{{"rock_climbing":"Joshua Tree National Park"}}
@@ -193,9 +206,11 @@ responses:
     - payload: /rock_climbing{{"rock_climbing":"Point Dume"}}
       title: Point Dume
     text: Sure, let me see what I can find. Here are some camping places
+
   utter_rock_climbing:
   - text: "{rock_climbing} looks like a great choice for rock climbing. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {rock_climbing} for rock climbing , it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_outdoor_activities_camping:
   - buttons:
     - payload: /camping{{"camping":"Yosemite National Park"}}
@@ -211,9 +226,11 @@ responses:
     - payload: /camping{{"camping":"Ventana Campground"}}
       title: Ventana Campground
     text: Sure, let me see what I can find. Here are some camping places
+
   utter_camping:
   - text: "{camping} looks like a great choice for camping. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {camping} for camping , it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_outdoor_activities_fishing:
   - buttons:
     - payload: /fishing{{"fishing":"Plumas National Forest"}}
@@ -229,9 +246,11 @@ responses:
     - payload: /fishing{{"fishing":"Merced River Recreation Area"}}
       title: Merced River Recreation Area
     text: Sure, let me see what I can find. Here are some fishing places,
+
   utter_fishing:
   - text: "{fishing} looks like a great choice for fishing. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {fishing} for fishing , it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_outdoor_activities_rafting:
   - buttons:
     - payload: /rafting{{"rafting":"South Fork American River"}}
@@ -247,9 +266,11 @@ responses:
     - payload: /rafting{{"rafting":"California Salmon River"}}
       title: California Salmon River
     text: Sure, let me see what I can find. Here are some rafting places,
+
   utter_rafting:
   - text: "{rafting} looks like a great choice for rafting. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {rafting} for rafting , it's been saved. Let’s checking later to reflect on how it went."
+
   utter_recommend_indoor_activities:
   - buttons:
     - payload: /indoor_activities{{"indoor_activity":"Watch a movie on Netflix"}}
@@ -261,26 +282,32 @@ responses:
     - payload: /indoor_activities{{"indoor_activity":"Yoga"}}
       title: Yoga
     text: Here are some indoor activities I think you might like
+
   utter_indoor_activities_watch_movie:
   - text: |-
       I see. I found a list of movies. Want to try these?
         (AI shows list of movies)
+
   utter_indoor_activities_read_book:
   - text: |-
       I see. I found a list of books. Want to try these?
         (AI shows list of books)
+
   utter_indoor_activities_yoga:
   - text: |-
       I see. I found a list of yoga resources. Want to try these?
         (AI shows list of yoga resources)
+
   utter_indoor_activities_start_garden:
   - text: |-
       I see. I found a list of gardening resources. Want to try these?
         (AI shows list of gardening resources)
+
   utter_indoor_activities_cooking:
   - text: |-
       I see. I found a list of cooking resources. Want to try these?
         (AI shows list of cooking resources)
+
   utter_recommend_other_indoor_activities:
   - buttons:
     - payload: /other_indoor_activities{{"other_indoor_activity":"Kezar"}}
@@ -292,26 +319,55 @@ responses:
     - payload: /other_indoor_activities{{"other_indoor_activity":"The village Idiot"}}
       title: The village Idiot
     text: Sure. Here are a few other things you can do.
+
   utter_indoor_activities:
   - text: Sounds wonderful. Enjoy the rest of your day.
+
   utter_deny_activity:
   - text: Great. I am here if you need me. Have a good rest of your day.
+
   utter_recommend_fall_asleep_find:
   - text: |-
       Hey there, sorry to here. Let me see what I can find to make you feel better.
        (thinking)
+
   utter_recommend_fall_asleep:
   - text: Do you want me put on some calm music on Spotify to help you fall asleep?
+
   utter_continue_sleep:
   - text: Great. Here you go. Hope this helps.
-  utter_recommend_goal:
+   
+  ## Goal setting or improvement goal
+
+  utter_goal_setting_improve_goal:
   - text: |-
       Many have benefitted from consistent effort on their eating habits, fitness, and mindfulness. 
         We could start with these unless if you have a better idea.
+  
+  utter_goal_setting_improve_goal_eating_habits:
+  - text: |-
+      These would be helpful toward {goal}
+        (shows list of locations/videos/etc)  
+  - text: |-
+      Try these out for {goal}
+        (shows list of locations/videos/etc)
+
+  utter_goal_setting_improve_goal_mindfulness:
+  - text: |-
+      These would be helpful toward {goal}
+        (shows list of locations/videos/etc)  
+  - text: |-
+      Try these out for {goal}
+        (shows list of locations/videos/etc)
+  
+  utter_goal_setting_improve_goal_continue:
+  - text: Anything else I can help you with?
+
   utter_sounds_good:
   - text: |-
       Great! I’ve added nutrition, fitness, and mindfulness to your goals. 
         Would you like to start working on your goals now?
+
   utter_fitness_goal:
   - buttons:
     - payload: /parks_list{{"park":"Yosemite National Park"}}
@@ -323,13 +379,14 @@ responses:
     - payload: /parks_list{{"park":"Death Valley National Park"}}
       title: Death Valley National Park
     text: I see the weather is clear today. Would you like to run to a nearby park?
+
   utter_parks_list:
   - text: "{park} looks like a great choice for running. It has been saved! Let's check in later to reflect on how it went."
   - text: "You chose: {park} for running, it's been saved. Let’s checking later to reflect on how it went."
-  utter_parks_list_continue:
-  - text: Anything else I can help you with?
+
   utter_golf_swing:
   - text: Okay. Golf swing has been added to your goals. Would you like to start working on your goals now?
+
   utter_golf_ranges_list:
   - buttons:
     - payload: /golf_ranges{{"golf_range":"Aroma Golf Range"}}
@@ -341,14 +398,19 @@ responses:
     - payload: /golf_ranges{{"golf_range":"Santa Fe Golf Range"}}
       title: Santa Fe Golf Range
     text: I see there are golfing ranges. Want to try them out?
+ 
+  utter_golf_ranges:
+  - text: "{golf_range} looks like a great choice for golf_range. It has been saved! Let's check in later to reflect on how it went."
+  - text: "You chose: {golf_range} for golf swing, it's been saved. Let’s checking later to reflect on how it went."
+
   utter_deny_golf_range:
   - text: |-
       I see. I found a list of instructional videos about golf swings. Want to try these?
         (AI shows list of videos)
+
   utter_next_time:
   - text: Okay. We can try these another time.
-  utter_next_time_continue:
-  - text: Anything else I can help you with?
+
   utter_daily_goals:
   - buttons:
     - payload: /select_saved_goals{{"saved_goal":"Golf Swing"}}
@@ -360,16 +422,23 @@ responses:
     - payload: /select_saved_goals{{"saved_goal":"Fitness"}}
       title: Fitness
     text: Okay. Which goal did you have in mind?
+
   utter_select_saved_goals:
   - text: |-
-      Good choice. How do these look?
-        (shows list of locations/videos/etc) 
+      These would be helpful toward {saved_goal}
+        (shows list of locations/videos/etc)  
+  - text: |-
+      Try these out for {saved_goal}
+        (shows list of locations/videos/etc)
+
   utter_pick_from_list:
   - text: |-
       Okay. Your activity has been saved. Let’s check back later. 
         Anything else I can do for you?
+
   utter_busy:
   - text: Ok. We can save that for another time.
+
   utter_goodbye:
   - text: ok, see you later
 
@@ -394,6 +463,8 @@ actions:
 - action_ToughHikes
 - action_WatchMovie
 - action_Yoga
+- action_Mindfulness
+- action_EatingHabits
 - utter_camping
 - utter_continue_hike
 - utter_continue_sleep
@@ -415,17 +486,18 @@ actions:
 - utter_local_hikes
 - utter_local_hikes_list
 - utter_next_time
-- utter_next_time_continue
 - utter_outdoor_activities
 - utter_parks_list
-- utter_parks_list_continue
+- utter_goal_setting_improve_goal_continue
+- utter_goal_setting_improve_goal_eating_habits
+- utter_goal_setting_improve_goal_mindfulness
 - utter_pick_from_list
 - utter_rafting
 - utter_recommend_activity_find
 - utter_recommend_activity_outdoor
 - utter_recommend_fall_asleep
 - utter_recommend_fall_asleep_find
-- utter_recommend_goal
+- utter_goal_setting_improve_goal
 - utter_recommend_hike_type_easy
 - utter_recommend_hike_type_tough
 - utter_recommend_indoor_activities
@@ -439,6 +511,7 @@ actions:
 - utter_sounds_good
 - utter_tough_hikes
 - utter_busy
+- utter_golf_ranges
 
 session_config:
   session_expiration_time: 60

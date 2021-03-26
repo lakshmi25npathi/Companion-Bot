@@ -7,8 +7,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: golf_swing
   - action: utter_golf_swing
   - intent: continue
@@ -19,7 +19,7 @@ stories:
   - action: utter_deny_golf_range
   - intent: next_time
   - action: utter_next_time
-  - action: utter_next_time_continue
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye
 
@@ -27,8 +27,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: golf_swing
   - action: utter_golf_swing
   - intent: continue
@@ -39,7 +39,7 @@ stories:
   - action: utter_deny_golf_range
   - intent: next_time
   - action: utter_next_time
-  - action: utter_next_time_continue
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye
 
@@ -47,8 +47,8 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: recommend_goal
-  - action: utter_recommend_goal
+  - intent: goal_setting_improve_goal
+  - action: utter_goal_setting_improve_goal
   - intent: golf_swing
   - action: utter_golf_swing
   - intent: continue
@@ -59,7 +59,67 @@ stories:
   - action: utter_deny_golf_range
   - intent: next_time
   - action: utter_next_time
-  - action: utter_next_time_continue
+  - action: utter_goal_setting_improve_goal_continue
   - intent: deny
   - action: utter_goodbye
 
+
+- story: golf swing story 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: golf swing
+  - slot_was_set:
+    - goal: golf swing
+  - action: action_GolfRanges
+  - intent: golf_ranges
+    entities:
+    - golf_range: Inland Golf Range
+  - slot_was_set:
+    - golf_range: Inland Golf Range
+  - action: utter_golf_ranges
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye
+
+- story: golf swing story 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: golf swing
+  - slot_was_set:
+    - goal: golf swing
+  - action: action_GolfRanges
+  - intent: golf_ranges
+    entities:
+    - golf_range: Aroma Golf Range
+  - slot_was_set:
+    - golf_range: Aroma Golf Range
+  - action: utter_golf_ranges
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye
+
+- story: golf swing story 6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: golf swing
+  - slot_was_set:
+    - goal: golf swing
+  - action: action_GolfRanges
+  - intent: golf_ranges
+    entities:
+    - golf_range: The Ranch Golf Range
+  - slot_was_set:
+    - golf_range: The Ranch Golf Range
+  - action: utter_golf_ranges
+  - action: utter_goal_setting_improve_goal_continue
+  - intent: deny
+  - action: utter_goodbye

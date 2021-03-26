@@ -1,0 +1,47 @@
+
+version: "2.0"
+stories:
+- story: mindfulness story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: Mindfulness
+  - slot_was_set:
+    - goal: Mindfulness
+  - action: action_Mindfulness
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
+
+- story: mindfulness story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: Mindfulness
+  - slot_was_set:
+    - goal: Mindfulness
+  - action: action_Mindfulness
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
+
+- story: mindfulness story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goal_setting_improve_goal
+    entities:
+    - goal: Mindfulness
+  - slot_was_set:
+    - goal: Mindfulness
+  - action: action_Mindfulness
+  - intent: pick_from_list
+  - action: utter_pick_from_list
+  - intent: deny
+  - action: utter_goodbye
