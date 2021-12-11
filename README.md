@@ -1,16 +1,16 @@
 # Companion Bot #
 
-Rasa chatbot for activity recommendation and goal setting
+Rasa chatbot for activity recommendation and goal setting.
 
-Training the model run the command in CLI
+To train the model
 
 # rasa train
 
-To run the model first we have to run actions in CLI
+Running action server 
 
 # rasa run actions
 
-Then run the command in CLI to interact with bot
+To interact with bot
 
 # rasa shell
 
